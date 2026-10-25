@@ -1,0 +1,165 @@
+{
+  "id": "T15",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_1994f3752bc84433a3cdf412a93e631c",
+  "questions": [
+    "R003报告对血糖记录整理是怎么说的？"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "R003报告（2026-10-16）指出：血糖记录应分别按空腹、餐后、随机及条件未知归档，但报告本身不包含新的测量数值，也不说明用药调整效果。",
+      "citations": [
+        "R003:C001"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "1ba336e1b1c64dca888a91e5768dbfce",
+          "arguments": {
+            "query": "血糖记录整理",
+            "mode": "mention_check",
+            "report_id": "R003",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "error",
+          "result_id": "res_8e91af992843422080ba972d122b1ba2",
+          "evidence_ids": [],
+          "duration_ms": 0,
+          "error_code": "report_date_mismatch",
+          "origin": "policy_guard"
+        },
+        {
+          "tool": "search_health_documents",
+          "call_id": "6746e3fb8f084e94b12114e8ef7e02a6",
+          "arguments": {
+            "query": "血糖记录整理",
+            "mode": "semantic",
+            "report_id": "R003",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_2332c59b087d42f1a79ebbfcef9ec1e0",
+          "evidence_ids": [
+            "R003:C001"
+          ],
+          "duration_ms": 128,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "error",
+          "result_id": "res_8e91af992843422080ba972d122b1ba2",
+          "data": {
+            "required_parameters": {
+              "start_date": null,
+              "end_date": null,
+              "mode": "semantic"
+            }
+          },
+          "evidence": [],
+          "warnings": [],
+          "error": {
+            "code": "report_date_mismatch",
+            "message": "检索条件与用户范围不一致。去年是上一自然年；仅指定报告编号不能增加日期过滤；报告内容问答用semantic，全文是否提及才用mention_check。请按required_parameters纠正。"
+          }
+        },
+        {
+          "status": "ok",
+          "result_id": "res_2332c59b087d42f1a79ebbfcef9ec1e0",
+          "data": {
+            "mode": "semantic",
+            "scope_report_ids": [
+              "R003"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 173,
+                "start_line": 1,
+                "end_line": 12,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R003\n报告日期：2026-10-16\n模拟用户：P001\n标题：测量记录整理摘要\n\n血糖记录\n记录整理意见：空腹、餐后、随机及条件未知的血糖记录应分别归档。\n本文件不包含新的测量数值，也不说明任何用药调整的效果。\n\n体重记录\n记录整理意见：按测量日期展示体重记录；未测量的日期保持空缺。\n",
+                "report_id": "R003",
+                "report_date": "2026-10-16",
+                "source_id": "R003:C001",
+                "score": 0.559807
+              }
+            ],
+            "coverage": "top_k_only",
+            "absence_scope": "检索片段不能证明整份报告未提及",
+            "embedding_model": "embeddinggemma:300m"
+          },
+          "evidence": [
+            {
+              "source_type": "report_text",
+              "source_id": "R003:C001",
+              "locator": {
+                "file_path": "sample_data/reports/2026-10-16_followup.txt",
+                "content_hash": "b992d1878e51da8537c4264937ae8b9cc063bf10da3b230ef05b056e26845cee",
+                "start_line": 1,
+                "end_line": 12
+              },
+              "record": {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 173,
+                "start_line": 1,
+                "end_line": 12,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R003\n报告日期：2026-10-16\n模拟用户：P001\n标题：测量记录整理摘要\n\n血糖记录\n记录整理意见：空腹、餐后、随机及条件未知的血糖记录应分别归档。\n本文件不包含新的测量数值，也不说明任何用药调整的效果。\n\n体重记录\n记录整理意见：按测量日期展示体重记录；未测量的日期保持空缺。\n",
+                "report_id": "R003",
+                "report_date": "2026-10-16",
+                "source_id": "R003:C001",
+                "score": 0.559807
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 2,
+      "model_calls": 3,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 13270,
+        "output_tokens": 314,
+        "backend_requests": 4,
+        "total_tokens": 13584
+      },
+      "duration_ms": 31644,
+      "thread_id": "068a5315bd519806bb779538c0fd0958d70bb1ee0f6207554c882667205036ae",
+      "pending_task_id": "39a73e40a80b48ed9211a197c6274203",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:08:37.116167+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "semantic": true,
+    "supported_quote": true,
+    "located": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T15",
+  "repeat": 1
+}

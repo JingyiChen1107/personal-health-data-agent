@@ -1,0 +1,8 @@
+langgraph==1.2.16
+openai==2.54.0
+streamlit==1.66.1
+python-dotenv==1.2.4
+httpx==0.28.1
+langgraph-checkpoint-sqlite==3.1.2
+chromadb==1.5.9
+matplotlib==3.11.2

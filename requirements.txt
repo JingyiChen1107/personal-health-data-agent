@@ -1,0 +1,2 @@
+# Day 6 lock verified on Python 3.12, macOS arm64.
+-r requirements.lock

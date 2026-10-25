@@ -1,0 +1,580 @@
+{
+  "id": "T11",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_6315a14a5c86482fbf2db2764af558ef",
+  "questions": [
+    "我调整药物以后血糖有没有变化？"
+  ],
+  "turns": [
+    {
+      "status": "needs_clarification",
+      "answer": "你想比较哪次用药调整？请选择真实事件ID。 E001: 2026-07-01 二甲双胍; E002: 2026-07-01 氨氯地平; E003: 2026-07-01 阿托伐他汀; E004: 2026-08-25 阿托伐他汀; E005: 2026-09-02 阿托伐他汀; E006: 2026-09-10 阿托伐他汀; E007: 2026-10-01 二甲双胍",
+      "citations": [],
+      "needs_clarification": true,
+      "error": null,
+      "pending": {
+        "question": "你想比较哪次用药调整？请选择真实事件ID。 E001: 2026-07-01 二甲双胍; E002: 2026-07-01 氨氯地平; E003: 2026-07-01 阿托伐他汀; E004: 2026-08-25 阿托伐他汀; E005: 2026-09-02 阿托伐他汀; E006: 2026-09-10 阿托伐他汀; E007: 2026-10-01 二甲双胍",
+        "choices": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007"
+        ],
+        "missing_fields": [
+          "event_id"
+        ],
+        "pending_task_id": "36575b808c4445c988c1146da949b9a2",
+        "origin": "policy_guard"
+      },
+      "trace": [
+        {
+          "tool": "query_medications",
+          "call_id": "340a00b07a65479a9356f3ad7137a7bf",
+          "arguments": {
+            "mode": "events"
+          },
+          "status": "ok",
+          "result_id": "res_4796aef1534f4211a0047ed0cacb90f4",
+          "evidence_ids": [
+            "E001",
+            "M001",
+            "E002",
+            "M003",
+            "E003",
+            "M004",
+            "E004",
+            "M005",
+            "E005",
+            "M006",
+            "E006",
+            "M007",
+            "E007",
+            "M002"
+          ],
+          "duration_ms": 10,
+          "error_code": null
+        },
+        {
+          "tool": "query_health_data",
+          "call_id": "c3bb59c7be524514976d7ff1168c74b8",
+          "arguments": {
+            "indicator": "glucose",
+            "mode": "compare_event",
+            "event_id": "E007",
+            "window_days": 14
+          },
+          "status": "needs_clarification",
+          "result_id": "res_76ad1f8f9563485f942c5559255524f7",
+          "evidence_ids": [],
+          "duration_ms": 0,
+          "error_code": "user_confirmation_required",
+          "origin": "policy_guard"
+        },
+        {
+          "tool": "ask_user",
+          "call_id": "policy_16f7dba0caf64af0a26dc29e24f8232c",
+          "arguments": {
+            "question": "你想比较哪次用药调整？请选择真实事件ID。 E001: 2026-07-01 二甲双胍; E002: 2026-07-01 氨氯地平; E003: 2026-07-01 阿托伐他汀; E004: 2026-08-25 阿托伐他汀; E005: 2026-09-02 阿托伐他汀; E006: 2026-09-10 阿托伐他汀; E007: 2026-10-01 二甲双胍",
+            "choices": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007"
+            ],
+            "missing_fields": [
+              "event_id"
+            ],
+            "pending_task_id": "36575b808c4445c988c1146da949b9a2",
+            "origin": "policy_guard"
+          },
+          "status": "needs_clarification",
+          "result_id": null,
+          "evidence_ids": [],
+          "duration_ms": 0,
+          "error_code": null,
+          "origin": "policy_guard"
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_4796aef1534f4211a0047ed0cacb90f4",
+          "data": {
+            "parameters": {
+              "mode": "events",
+              "medication_name": null,
+              "start_date": null,
+              "end_date": null,
+              "event_id": null,
+              "event_type": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": null,
+            "range": {
+              "start_date": null,
+              "end_date_exclusive": "2026-10-24",
+              "start_utc": null,
+              "end_utc_exclusive": "2026-10-24T05:00:00Z"
+            },
+            "events": [
+              {
+                "event_id": "E001",
+                "patient_id": "P001",
+                "event_date": "2026-07-01",
+                "event_type": "start",
+                "old_medication_id": null,
+                "new_medication_id": "M001",
+                "old_medication": null,
+                "new_medication": {
+                  "medication_id": "M001",
+                  "patient_id": "P001",
+                  "medication_name": "二甲双胍",
+                  "dose": "500 mg",
+                  "frequency": "每日两次",
+                  "start_date": "2026-07-01",
+                  "end_date": "2026-10-01"
+                }
+              },
+              {
+                "event_id": "E002",
+                "patient_id": "P001",
+                "event_date": "2026-07-01",
+                "event_type": "start",
+                "old_medication_id": null,
+                "new_medication_id": "M003",
+                "old_medication": null,
+                "new_medication": {
+                  "medication_id": "M003",
+                  "patient_id": "P001",
+                  "medication_name": "氨氯地平",
+                  "dose": "5 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-07-01",
+                  "end_date": null
+                }
+              },
+              {
+                "event_id": "E003",
+                "patient_id": "P001",
+                "event_date": "2026-07-01",
+                "event_type": "start",
+                "old_medication_id": null,
+                "new_medication_id": "M004",
+                "old_medication": null,
+                "new_medication": {
+                  "medication_id": "M004",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "10 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-07-01",
+                  "end_date": "2026-08-25"
+                }
+              },
+              {
+                "event_id": "E004",
+                "patient_id": "P001",
+                "event_date": "2026-08-25",
+                "event_type": "dose_change",
+                "old_medication_id": "M004",
+                "new_medication_id": "M005",
+                "old_medication": {
+                  "medication_id": "M004",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "10 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-07-01",
+                  "end_date": "2026-08-25"
+                },
+                "new_medication": {
+                  "medication_id": "M005",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "20 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-08-25",
+                  "end_date": "2026-09-02"
+                }
+              },
+              {
+                "event_id": "E005",
+                "patient_id": "P001",
+                "event_date": "2026-09-02",
+                "event_type": "dose_change",
+                "old_medication_id": "M005",
+                "new_medication_id": "M006",
+                "old_medication": {
+                  "medication_id": "M005",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "20 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-08-25",
+                  "end_date": "2026-09-02"
+                },
+                "new_medication": {
+                  "medication_id": "M006",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "10 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-09-02",
+                  "end_date": "2026-09-10"
+                }
+              },
+              {
+                "event_id": "E006",
+                "patient_id": "P001",
+                "event_date": "2026-09-10",
+                "event_type": "dose_change",
+                "old_medication_id": "M006",
+                "new_medication_id": "M007",
+                "old_medication": {
+                  "medication_id": "M006",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "10 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-09-02",
+                  "end_date": "2026-09-10"
+                },
+                "new_medication": {
+                  "medication_id": "M007",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "20 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-09-10",
+                  "end_date": null
+                }
+              },
+              {
+                "event_id": "E007",
+                "patient_id": "P001",
+                "event_date": "2026-10-01",
+                "event_type": "dose_change",
+                "old_medication_id": "M001",
+                "new_medication_id": "M002",
+                "old_medication": {
+                  "medication_id": "M001",
+                  "patient_id": "P001",
+                  "medication_name": "二甲双胍",
+                  "dose": "500 mg",
+                  "frequency": "每日两次",
+                  "start_date": "2026-07-01",
+                  "end_date": "2026-10-01"
+                },
+                "new_medication": {
+                  "medication_id": "M002",
+                  "patient_id": "P001",
+                  "medication_name": "二甲双胍",
+                  "dose": "850 mg",
+                  "frequency": "每日两次",
+                  "start_date": "2026-10-01",
+                  "end_date": null
+                }
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "source_type": "medication_event",
+              "source_id": "E001",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E001"
+              },
+              "record": {
+                "event_id": "E001",
+                "patient_id": "P001",
+                "event_date": "2026-07-01",
+                "event_type": "start",
+                "old_medication_id": null,
+                "new_medication_id": "M001"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M001",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M001"
+              },
+              "record": {
+                "medication_id": "M001",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "500 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-07-01",
+                "end_date": "2026-10-01"
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E002",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E002"
+              },
+              "record": {
+                "event_id": "E002",
+                "patient_id": "P001",
+                "event_date": "2026-07-01",
+                "event_type": "start",
+                "old_medication_id": null,
+                "new_medication_id": "M003"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M003",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M003"
+              },
+              "record": {
+                "medication_id": "M003",
+                "patient_id": "P001",
+                "medication_name": "氨氯地平",
+                "dose": "5 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-07-01",
+                "end_date": null
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E003",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E003"
+              },
+              "record": {
+                "event_id": "E003",
+                "patient_id": "P001",
+                "event_date": "2026-07-01",
+                "event_type": "start",
+                "old_medication_id": null,
+                "new_medication_id": "M004"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M004",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M004"
+              },
+              "record": {
+                "medication_id": "M004",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "10 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-07-01",
+                "end_date": "2026-08-25"
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E004",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E004"
+              },
+              "record": {
+                "event_id": "E004",
+                "patient_id": "P001",
+                "event_date": "2026-08-25",
+                "event_type": "dose_change",
+                "old_medication_id": "M004",
+                "new_medication_id": "M005"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M005",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M005"
+              },
+              "record": {
+                "medication_id": "M005",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "20 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-08-25",
+                "end_date": "2026-09-02"
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E005",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E005"
+              },
+              "record": {
+                "event_id": "E005",
+                "patient_id": "P001",
+                "event_date": "2026-09-02",
+                "event_type": "dose_change",
+                "old_medication_id": "M005",
+                "new_medication_id": "M006"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M006",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M006"
+              },
+              "record": {
+                "medication_id": "M006",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "10 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-09-02",
+                "end_date": "2026-09-10"
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E006",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E006"
+              },
+              "record": {
+                "event_id": "E006",
+                "patient_id": "P001",
+                "event_date": "2026-09-10",
+                "event_type": "dose_change",
+                "old_medication_id": "M006",
+                "new_medication_id": "M007"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M007",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M007"
+              },
+              "record": {
+                "medication_id": "M007",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "20 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-09-10",
+                "end_date": null
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E007",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E007"
+              },
+              "record": {
+                "event_id": "E007",
+                "patient_id": "P001",
+                "event_date": "2026-10-01",
+                "event_type": "dose_change",
+                "old_medication_id": "M001",
+                "new_medication_id": "M002"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M002",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M002"
+              },
+              "record": {
+                "medication_id": "M002",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "850 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-10-01",
+                "end_date": null
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        },
+        {
+          "status": "needs_clarification",
+          "result_id": "res_76ad1f8f9563485f942c5559255524f7",
+          "data": {
+            "question": "你想比较哪次用药调整？请选择真实事件ID。 E001: 2026-07-01 二甲双胍; E002: 2026-07-01 氨氯地平; E003: 2026-07-01 阿托伐他汀; E004: 2026-08-25 阿托伐他汀; E005: 2026-09-02 阿托伐他汀; E006: 2026-09-10 阿托伐他汀; E007: 2026-10-01 二甲双胍",
+            "choices": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007"
+            ],
+            "missing_fields": [
+              "event_id"
+            ],
+            "pending_task_id": "36575b808c4445c988c1146da949b9a2",
+            "origin": "policy_guard"
+          },
+          "evidence": [],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 2,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 7320,
+        "output_tokens": 98,
+        "backend_requests": 2,
+        "total_tokens": 7418
+      },
+      "duration_ms": 22476,
+      "thread_id": "858e2ff0be7e7de4e402b2afd9703e576856eb1b7527dd772bb46e704ee2fd47",
+      "pending_task_id": "36575b808c4445c988c1146da949b9a2",
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:06:43.194281+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "event_scope": true,
+    "pending_event": true,
+    "no_guessed_stats": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T11",
+  "repeat": 1
+}

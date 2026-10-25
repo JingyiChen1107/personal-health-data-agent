@@ -1,0 +1,44 @@
+{
+  "id": "T09",
+  "kind": "direct_tool",
+  "passed": true,
+  "variants": {
+    "missing_result": {
+      "status": "error",
+      "result_id": "res_2c270b94df594fbe8a5f6c895f8ec618",
+      "data": {},
+      "evidence": [],
+      "warnings": [],
+      "error": {
+        "code": "invalid_result_id",
+        "message": "结果不存在、已过期或不属于本会话，请重新查询。"
+      }
+    },
+    "other_session_result": {
+      "status": "error",
+      "result_id": "res_15aa2db48b4f4f128b2b764ebb073fa3",
+      "data": {},
+      "evidence": [],
+      "warnings": [],
+      "error": {
+        "code": "invalid_result_id",
+        "message": "结果不存在、已过期或不属于本会话，请重新查询。"
+      }
+    },
+    "expired_result": {
+      "status": "error",
+      "result_id": "res_a30fc5ede03743639c605d6d8bdbccac",
+      "data": {},
+      "evidence": [],
+      "warnings": [],
+      "error": {
+        "code": "invalid_result_id",
+        "message": "结果不存在、已过期或不属于本会话，请重新查询。"
+      }
+    }
+  },
+  "turns": [],
+  "language": "en",
+  "execution_id": "en_T09",
+  "repeat": 1
+}

@@ -1,0 +1,40 @@
+{
+  "chart_id": "chart_a9c8e60b4c44c0f41972",
+  "source_result_id": "res_830c44e974354017963c482f309d2121",
+  "chart_type": "line",
+  "point_count": 1,
+  "measurement_count": 1,
+  "record_ids": [
+    "W016"
+  ],
+  "date_range": {
+    "first_local_time": "2026-10-20T08:00:00-05:00",
+    "last_local_time": "2026-10-20T08:00:00-05:00"
+  },
+  "query_range": {
+    "start_date": "2026-10-20",
+    "end_date_exclusive": "2026-10-21",
+    "start_utc": "2026-10-20T05:00:00Z",
+    "end_utc_exclusive": "2026-10-21T05:00:00Z"
+  },
+  "panels": [
+    {
+      "indicator": "weight",
+      "measurement_context": "unknown",
+      "unit": "kg",
+      "line_drawn": false,
+      "point_count": 1,
+      "points": [
+        {
+          "record_id": "W016",
+          "measurement_id": null,
+          "local_time": "2026-10-20T08:00:00-05:00",
+          "value": 77.5
+        }
+      ]
+    }
+  ],
+  "synthetic_only": true,
+  "language": "zh",
+  "timezone": "America/Chicago"
+}

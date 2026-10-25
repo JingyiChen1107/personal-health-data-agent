@@ -1,0 +1,235 @@
+{
+  "id": "T14",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_f6bc3c36195c436b9ca026b8a0a21353",
+  "questions": [
+    "去年的体检报告有没有提到LDL？"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "是的，去年体检报告（R001）中提到了LDL。报告显示 LDL-C 为 3.2 mmol/L，并注明无其他日期测量结果。",
+      "citations": [
+        "R001:L8",
+        "R001:L10"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "0caab92347f94f09906c360413edb00c",
+          "arguments": {
+            "query": "LDL",
+            "mode": "mention_check",
+            "report_id": null,
+            "start_date": "2025-10-23",
+            "end_date": "2026-10-23",
+            "top_k": 4
+          },
+          "status": "error",
+          "result_id": "res_e7b2b48b411d49ce9d897d045fe7ee7b",
+          "evidence_ids": [],
+          "duration_ms": 0,
+          "error_code": "report_date_mismatch",
+          "origin": "policy_guard"
+        },
+        {
+          "tool": "search_health_documents",
+          "call_id": "32ead862c03d4b3e95fd339af6afbded",
+          "arguments": {
+            "query": "LDL",
+            "mode": "mention_check",
+            "report_id": null,
+            "start_date": "2025-01-01",
+            "end_date": "2026-01-01",
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_721eaced68ba4afd9cd6a7ef24aec353",
+          "evidence_ids": [
+            "R001:SCAN",
+            "R002:SCAN",
+            "R001:L8",
+            "R001:L10"
+          ],
+          "duration_ms": 3,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "error",
+          "result_id": "res_e7b2b48b411d49ce9d897d045fe7ee7b",
+          "data": {
+            "required_parameters": {
+              "start_date": "2025-01-01",
+              "end_date": "2026-01-01"
+            }
+          },
+          "evidence": [],
+          "warnings": [],
+          "error": {
+            "code": "report_date_mismatch",
+            "message": "检索条件与用户范围不一致。去年是上一自然年；仅指定报告编号不能增加日期过滤；报告内容问答用semantic，全文是否提及才用mention_check。请按required_parameters纠正。"
+          }
+        },
+        {
+          "status": "ok",
+          "result_id": "res_721eaced68ba4afd9cd6a7ef24aec353",
+          "data": {
+            "mode": "mention_check",
+            "scope_report_ids": [
+              "R001",
+              "R002"
+            ],
+            "scope_report_count": 2,
+            "date_field": "report_date",
+            "start_date": "2025-01-01",
+            "end_date_exclusive": "2026-01-01",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "source_id": "R001:L8",
+                "report_id": "R001",
+                "text": "本次报告记录 LDL-C（低密度脂蛋白胆固醇）为 3.2 mmol/L。",
+                "start_line": 8,
+                "end_line": 8
+              },
+              {
+                "source_id": "R001:L10",
+                "report_id": "R001",
+                "text": "本报告没有提供其他日期的 LDL 测量结果。",
+                "start_line": 10,
+                "end_line": 10
+              }
+            ],
+            "checked_aliases": [
+              "LDL",
+              "LDL-C",
+              "低密度脂蛋白",
+              "低密度脂蛋白胆固醇",
+              "low-density lipoprotein"
+            ],
+            "coverage": "full_text",
+            "absence_scope": "仅限上述报告全文和列出的别名"
+          },
+          "evidence": [
+            {
+              "source_type": "report_scan",
+              "source_id": "R001:SCAN",
+              "locator": {
+                "report_id": "R001",
+                "file_path": "sample_data/reports/2025-10-10_checkup.txt",
+                "content_hash": "4d9372a8f803af1e1c36fa3a94d0454290df1ad9081e7d0aa8fdac1f326b321c",
+                "start_line": 1,
+                "end_line": 13
+              },
+              "record": {
+                "report_date": "2025-10-10",
+                "checked_aliases": [
+                  "LDL",
+                  "LDL-C",
+                  "低密度脂蛋白",
+                  "低密度脂蛋白胆固醇",
+                  "low-density lipoprotein"
+                ],
+                "coverage": "full_text",
+                "match_count": 2
+              }
+            },
+            {
+              "source_type": "report_scan",
+              "source_id": "R002:SCAN",
+              "locator": {
+                "report_id": "R002",
+                "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+                "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+                "start_line": 1,
+                "end_line": 9
+              },
+              "record": {
+                "report_date": "2025-12-05",
+                "checked_aliases": [
+                  "LDL",
+                  "LDL-C",
+                  "低密度脂蛋白",
+                  "低密度脂蛋白胆固醇",
+                  "low-density lipoprotein"
+                ],
+                "coverage": "full_text",
+                "match_count": 0
+              }
+            },
+            {
+              "source_type": "report_text",
+              "source_id": "R001:L8",
+              "locator": {
+                "file_path": "sample_data/reports/2025-10-10_checkup.txt",
+                "content_hash": "4d9372a8f803af1e1c36fa3a94d0454290df1ad9081e7d0aa8fdac1f326b321c",
+                "start_line": 8,
+                "end_line": 8
+              },
+              "record": {
+                "source_id": "R001:L8",
+                "report_id": "R001",
+                "text": "本次报告记录 LDL-C（低密度脂蛋白胆固醇）为 3.2 mmol/L。",
+                "start_line": 8,
+                "end_line": 8
+              }
+            },
+            {
+              "source_type": "report_text",
+              "source_id": "R001:L10",
+              "locator": {
+                "file_path": "sample_data/reports/2025-10-10_checkup.txt",
+                "content_hash": "4d9372a8f803af1e1c36fa3a94d0454290df1ad9081e7d0aa8fdac1f326b321c",
+                "start_line": 10,
+                "end_line": 10
+              },
+              "record": {
+                "source_id": "R001:L10",
+                "report_id": "R001",
+                "text": "本报告没有提供其他日期的 LDL 测量结果。",
+                "start_line": 10,
+                "end_line": 10
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 2,
+      "model_calls": 3,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 13352,
+        "output_tokens": 338,
+        "backend_requests": 4,
+        "total_tokens": 13690
+      },
+      "duration_ms": 34722,
+      "thread_id": "d8556d697ea9edba200f8cfa70a79a934b8f72b8afa46fbd78419595f5071021",
+      "pending_task_id": "e8f6893a3e3743369a3d72ce232ecefd",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:08:05.420531+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "year_full_scan": true,
+    "value": true,
+    "report_label": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T14",
+  "repeat": 1
+}

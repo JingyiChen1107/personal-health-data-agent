@@ -1,0 +1,3 @@
+Synthetic bilingual acceptance report. No real patient data.
+Record organization: preserve measurement dates and units. Keep missing measurement days empty; do not fill or interpolate them.
+Archive note: the amber notebook label is a document tag, not a health measurement.

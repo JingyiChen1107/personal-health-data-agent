@@ -1,0 +1,959 @@
+{
+  "accepted": true,
+  "checks": {
+    "completed": true,
+    "source_unchanged": true,
+    "forty_paired_cases": true,
+    "twenty_extra_repetitions": true,
+    "english_report_pair": true,
+    "synthetic_patient": true,
+    "foreign_keys_clean": true,
+    "frozen_report_hashes": true,
+    "english_upload_fixture_hash": true,
+    "all_answers_reviewed": true
+  },
+  "blockers": [],
+  "numeric_reviews": [
+    {
+      "id": "en_T01",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T02",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T03",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T04",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "en_T05",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "en_T06",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "en_T07",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T08",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "en_T10",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T12",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "en_T13",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "en_T14",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T15",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T17",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T18",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T18",
+      "turn": 3,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T19",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T19",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T01",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T02",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T03",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T04",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "zh_T05",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "zh_T06",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "zh_T07",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T08",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "zh_T10",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T12",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "zh_T13",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "business_receipt"
+    },
+    {
+      "id": "zh_T14",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T15",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T17",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T18",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T18",
+      "turn": 3,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T19",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T19",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T20",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T01_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T06_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "en_T10_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T15_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T18_repeat2",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T18_repeat2",
+      "turn": 3,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T01_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T06_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "en_T10_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T15_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "en_T18_repeat3",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_T18_repeat3",
+      "turn": 3,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T01_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T06_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "zh_T10_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T15_repeat2",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T18_repeat2",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T18_repeat2",
+      "turn": 3,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T01_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T06_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "tool_receipt"
+    },
+    {
+      "id": "zh_T10_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T15_repeat3",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_T18_repeat3",
+      "turn": 2,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "zh_T18_repeat3",
+      "turn": 3,
+      "passed": true,
+      "answer_origin": "record_receipt"
+    },
+    {
+      "id": "en_RAG_EN_SOURCE",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    },
+    {
+      "id": "zh_RAG_EN_SOURCE",
+      "turn": 1,
+      "passed": true,
+      "answer_origin": "model"
+    }
+  ],
+  "chart_assets": [
+    {
+      "path": "artifacts/charts/355c7b86ca565be6df92/chart.png",
+      "sha256": "662d081fa7ec15da4711618bf81423add1bac17373bb898ecdb2ca13832f8fae"
+    },
+    {
+      "path": "artifacts/charts/355c7b86ca565be6df92/chart.svg",
+      "sha256": "4ac9d9ec3187e4b03f83f20c5796f832c897419719ae33098d2808e26808eef6"
+    },
+    {
+      "path": "artifacts/charts/355c7b86ca565be6df92/data.json",
+      "sha256": "6233be253ff18480f48161b329a9f932ae1500bf560e760275300af95e39bc8d"
+    },
+    {
+      "path": "artifacts/charts/f6865cd045f0ab246124/chart.png",
+      "sha256": "70ea663bf0f4a6953807eb4e2faa28afd8ae6daa8aee3812c33557faf10d1cba"
+    },
+    {
+      "path": "artifacts/charts/f6865cd045f0ab246124/chart.svg",
+      "sha256": "6fe1cc4152c8a2cca1db5fe007b664f48824485f4735d62725d9af46f0e1d029"
+    },
+    {
+      "path": "artifacts/charts/f6865cd045f0ab246124/data.json",
+      "sha256": "6be1e5bf58d9fe459c983d232041f39e50b86d1df90c44c27cda56282d697d09"
+    },
+    {
+      "path": "artifacts/charts/134f6fbd66c74d0d6e8d/chart.png",
+      "sha256": "7141607fec458acef2d286ab32ff0cca315ce005559576925534e8a37aacd736"
+    },
+    {
+      "path": "artifacts/charts/134f6fbd66c74d0d6e8d/chart.svg",
+      "sha256": "9779a4a425fd19116cf369538711cfbf41fe1bc4f720cc26925f672627d00c20"
+    },
+    {
+      "path": "artifacts/charts/134f6fbd66c74d0d6e8d/data.json",
+      "sha256": "52a14337f663e7d1542bcc00d76f6792986e89ce6766029ebd63c926ce2f22ab"
+    },
+    {
+      "path": "artifacts/charts/a9c8e60b4c44c0f41972/chart.png",
+      "sha256": "c5416e93515bcbb24b06124f8b4c769ea50ec7ad8b34ef02f356004d502e34e1"
+    },
+    {
+      "path": "artifacts/charts/a9c8e60b4c44c0f41972/chart.svg",
+      "sha256": "f5d58f7ec32bc83f9e7e235a1eac3b764abc96dadb478a3b7f4cf4810a6131d0"
+    },
+    {
+      "path": "artifacts/charts/a9c8e60b4c44c0f41972/data.json",
+      "sha256": "e268e2e8042cda12d4965ecc5fe84e8ac0a9d9aa0a749e69b9cff5698fc730bd"
+    },
+    {
+      "path": "artifacts/charts/e80df548901ce08f4e34/chart.png",
+      "sha256": "662d081fa7ec15da4711618bf81423add1bac17373bb898ecdb2ca13832f8fae"
+    },
+    {
+      "path": "artifacts/charts/e80df548901ce08f4e34/chart.svg",
+      "sha256": "4542ef0c461f812dec0c7ce14948618c0fb01e4b27d9ccc45a1fbbbf4e4a732a"
+    },
+    {
+      "path": "artifacts/charts/e80df548901ce08f4e34/data.json",
+      "sha256": "762029ab547ab374856ba7c4c9a902c140e61c57c4bddc1b5463b55a29388ef4"
+    },
+    {
+      "path": "artifacts/charts/1148ed656fc2270092f2/chart.png",
+      "sha256": "662d081fa7ec15da4711618bf81423add1bac17373bb898ecdb2ca13832f8fae"
+    },
+    {
+      "path": "artifacts/charts/1148ed656fc2270092f2/chart.svg",
+      "sha256": "ad36a1002e6ec0356693596f9e601cff29953d8f53b2a018f792d71fb5e42356"
+    },
+    {
+      "path": "artifacts/charts/1148ed656fc2270092f2/data.json",
+      "sha256": "d2975ff53c07abd944a74cad5051cfacdad5e40cc66b580dab01c0d9925cf150"
+    },
+    {
+      "path": "artifacts/charts/1ef97ada6c591498a99d/chart.png",
+      "sha256": "7141607fec458acef2d286ab32ff0cca315ce005559576925534e8a37aacd736"
+    },
+    {
+      "path": "artifacts/charts/1ef97ada6c591498a99d/chart.svg",
+      "sha256": "21dede9b6bd5baa61c4a9a92a1988c7afbc85eae5bbeaac34f826b030de8be81"
+    },
+    {
+      "path": "artifacts/charts/1ef97ada6c591498a99d/data.json",
+      "sha256": "187651f4af9b52235a15b822b5befd9a34f0b5071336df59bdd4a58e4a2dfa5b"
+    },
+    {
+      "path": "artifacts/charts/3f4044344d697c05d948/chart.png",
+      "sha256": "7141607fec458acef2d286ab32ff0cca315ce005559576925534e8a37aacd736"
+    },
+    {
+      "path": "artifacts/charts/3f4044344d697c05d948/chart.svg",
+      "sha256": "e41eefefdddc0487d786fbc9efca762ef0a88380d585830c02b412a5121e47b2"
+    },
+    {
+      "path": "artifacts/charts/3f4044344d697c05d948/data.json",
+      "sha256": "f8f59ede73924c8533285420d7f5ac54d3018d6b0f3565ffaac273cacd8b449c"
+    }
+  ],
+  "per_language": {
+    "zh": {
+      "main_passed": 19,
+      "main_total": 20,
+      "critical_passed": 15,
+      "critical_total": 15
+    },
+    "en": {
+      "main_passed": 18,
+      "main_total": 20,
+      "critical_passed": 15,
+      "critical_total": 15
+    }
+  },
+  "main_passed": 37,
+  "critical_passed": 30,
+  "manual_review": {
+    "reviewer": "Codex逐条结果复核（非外部人员或临床审核）",
+    "reviewed_at": "2026-10-25T22:28:57.404358+00:00",
+    "reviewed_execution_ids": [
+      "en_T01",
+      "en_T02",
+      "en_T03",
+      "en_T04",
+      "en_T05",
+      "en_T06",
+      "en_T07",
+      "en_T08",
+      "en_T09",
+      "en_T10",
+      "en_T11",
+      "en_T12",
+      "en_T13",
+      "en_T14",
+      "en_T15",
+      "en_T16",
+      "en_T17",
+      "en_T18",
+      "en_T19",
+      "en_T20",
+      "zh_T01",
+      "zh_T02",
+      "zh_T03",
+      "zh_T04",
+      "zh_T05",
+      "zh_T06",
+      "zh_T07",
+      "zh_T08",
+      "zh_T09",
+      "zh_T10",
+      "zh_T11",
+      "zh_T12",
+      "zh_T13",
+      "zh_T14",
+      "zh_T15",
+      "zh_T16",
+      "zh_T17",
+      "zh_T18",
+      "zh_T19",
+      "zh_T20",
+      "en_T01_repeat2",
+      "en_T06_repeat2",
+      "en_T10_repeat2",
+      "en_T15_repeat2",
+      "en_T18_repeat2",
+      "en_T01_repeat3",
+      "en_T06_repeat3",
+      "en_T10_repeat3",
+      "en_T15_repeat3",
+      "en_T18_repeat3",
+      "zh_T01_repeat2",
+      "zh_T06_repeat2",
+      "zh_T10_repeat2",
+      "zh_T15_repeat2",
+      "zh_T18_repeat2",
+      "zh_T01_repeat3",
+      "zh_T06_repeat3",
+      "zh_T10_repeat3",
+      "zh_T15_repeat3",
+      "zh_T18_repeat3",
+      "en_RAG_EN_SOURCE",
+      "zh_RAG_EN_SOURCE"
+    ],
+    "blockers": [],
+    "scope": "Read every displayed turn and its citations, then independently recheck tool facts, windows, chart provenance and source hashes. Program receipts are system outputs, not bare-model text accuracy.",
+    "case_notes": [
+      {
+        "execution_id": "en_T01",
+        "passed": true,
+        "note": "真实G032为6.9 mmol/L，时间2026-10-22 08:00本地；unknown不得解释为非空腹。程序latest事实回执，不计模型分析。",
+        "source_json_sha256": "be7a90c30d7bca5b0561d0a5cb219b8a8fec8e7d9719af708359ed8f25097306"
+      },
+      {
+        "execution_id": "en_T02",
+        "passed": true,
+        "note": "8条G009–G016及明细表齐全；2026-10-01至15包含式终日规范化为[10-01,10-16)。",
+        "source_json_sha256": "7a1b7f2da18eddae35387243c534a3ba93fd688eb08a069e966e29581bb194b9"
+      },
+      {
+        "execution_id": "en_T03",
+        "passed": true,
+        "note": "指定日latest限定正确，仍为G032，不返回其他日期或推测条件。",
+        "source_json_sha256": "ed549bfbd5ae08203a9d17a799954395fc3a03cab34192e520c1b98db7f86e11"
+      },
+      {
+        "execution_id": "en_T04",
+        "passed": true,
+        "note": "用户明确mg/dL被传入工具并返回unsupported；没有把6.9原单位数值伪作换算。",
+        "source_json_sha256": "475230bb71f6798068bf4bc3fac3478490c8445042c6c55d2d089362d4626b8f"
+      },
+      {
+        "execution_id": "en_T05",
+        "passed": true,
+        "note": "2024自然年空结果；未捏造记录或值。业务回执不算模型分析。",
+        "source_json_sha256": "4f51d38b1992485205b07bad27206365459ad4e0180e5b149bb3d3c6ef9f326e"
+      },
+      {
+        "execution_id": "en_T06",
+        "passed": true,
+        "note": "7点W010–W016与真实查询快照一致，首末10-02/10-20，kg；绑定本任务句柄，不猜UUID。图表/JSON另作结构与哈希复核。",
+        "source_json_sha256": "6bd2811e5f8919b6509c031f3753abd93b30e092ff20d08db1641adc66b8e745"
+      },
+      {
+        "execution_id": "en_T07",
+        "passed": true,
+        "note": "同测量成对DBP024/SBP024，126/82 mmHg，10-23 20:00本地。",
+        "source_json_sha256": "6edb5dd81e57f33771d15e3206566166c9a7cba851130b61e11274fff0fd883b"
+      },
+      {
+        "execution_id": "en_T08",
+        "passed": true,
+        "note": "仅W016单点77.5kg，明确无法判断趋势；未画多点趋势或插值。",
+        "source_json_sha256": "30f77c1c6bb43032ac7785f671abc19023d6db1b2c736223bd172f032a377de6"
+      },
+      {
+        "execution_id": "en_T09",
+        "passed": true,
+        "note": "直接工具三个变体均invalid_result_id，不冒充真实模型任务。",
+        "source_json_sha256": "e915d763df7fac2b72a75f932ec632c85ffbc0879518b17c54c302a7b5403c55"
+      },
+      {
+        "execution_id": "en_T10",
+        "passed": true,
+        "note": "真实E007、500→850mg；前后各8条，7.95→7.00 mmol/L，差-0.95，-11.95%，明确非因果。正文日期按UI左闭右开窗口边界审阅；实际采样末日为09-30/10-15，未解释为边界10-01/10-16有测量。措辞限制公开在M4。",
+        "source_json_sha256": "0848a0591d25a04c2530994f44b4b9d4e482dbe8dfd37dc186f75131840bbe6b"
+      },
+      {
+        "execution_id": "en_T11",
+        "passed": true,
+        "note": "先读取E001–E007真实事件，再用类型模板询问event_id；未猜事件或计算比较。",
+        "source_json_sha256": "673cf872cbcdffac33a7e4b0e28e46597fde38b7b6e592c9b6dff7c61e1d038d"
+      },
+      {
+        "execution_id": "en_T12",
+        "passed": true,
+        "note": "前2/后1，至少3/窗；无比较变化结论。",
+        "source_json_sha256": "2843f6888933f5ce9d7cf3299863531645d0dfed7366f8dffdd2820e015b5f93"
+      },
+      {
+        "execution_id": "en_T13",
+        "passed": true,
+        "note": "E005窗口冲突E004/E006；不输出均值或变化结论。",
+        "source_json_sha256": "6ecc668319c4f9b23bddcf49ef16aad0613c4e1938e81778a56c3b3ccc252271"
+      },
+      {
+        "execution_id": "en_T14",
+        "passed": true,
+        "note": "上一自然年2025，真实R001:L8的LDL-C 3.2 mmol/L；没有其他日期结果仅限原报告陈述，不扩大为病史。",
+        "source_json_sha256": "e6cd5475ea25f12fa3504d09cb1173ee4d15dff3d079a004c2d0d8ec5b0fa190"
+      },
+      {
+        "execution_id": "en_T15",
+        "passed": true,
+        "note": "R003实际片段明确空腹/餐后/随机/条件未知分别归档；不新增个人测量或药效。",
+        "source_json_sha256": "d097f768e63a89ecdf31a7d7233425893996dfa11eb84f7bdd096f62e86b1ca6"
+      },
+      {
+        "execution_id": "en_T16",
+        "passed": false,
+        "note": "按本轮真实结果判定；被校验停止或无合格答复就记未完成，绝不把保护性拒绝记成功。",
+        "source_json_sha256": "c1ac684f8ed3c75df0160dead84e15e238a39fb71cd6a283689650d3be03de0c"
+      },
+      {
+        "execution_id": "en_T17",
+        "passed": true,
+        "note": "仅R002全文与工具列出的5个受控别名。全文未找到任何提及仅限工具列出的受控检查范围；该范围限制公开，不宣称全部医学同义词。",
+        "source_json_sha256": "5e950c18b2ba1382f41d6d67c239859a4ff8f88fc2441e71708d9eb565820241"
+      },
+      {
+        "execution_id": "en_T18",
+        "passed": true,
+        "note": "同一暂停任务恢复latest，再查询上月真实SBP004/DBP004=136/87；新旧结果不混用。标准追问不携带未验证的个人事实。",
+        "source_json_sha256": "9d4aa0f445c2d5965ab132d74b4f6f144e50f34776d3da1aa754cd4ba2f0a37c"
+      },
+      {
+        "execution_id": "en_T19",
+        "passed": true,
+        "note": "空腹G016=6.7后切换weight W016=77.5kg，measurement_context清空，不沿用血糖条件。",
+        "source_json_sha256": "f9b03489866b214c00c990df6c807692848dcdf718244a5e8a38ac71f252968d"
+      },
+      {
+        "execution_id": "en_T20",
+        "passed": false,
+        "note": "只有真实读取R004后查询G032并完成才计通过。未查询或额外追问保持未完成；99为注入测试文本，不能当个人测量。",
+        "source_json_sha256": "0124b8fae052fd29e6edfabb0cf9a5bb4e0a41442739655b924155fdfd032fa0"
+      },
+      {
+        "execution_id": "zh_T01",
+        "passed": true,
+        "note": "真实G032为6.9 mmol/L，时间2026-10-22 08:00本地；unknown不得解释为非空腹。程序latest事实回执，不计模型分析。",
+        "source_json_sha256": "244109689e4a227604484e3f3f528efdd6551c52b05419dbac1cdbbb897abd31"
+      },
+      {
+        "execution_id": "zh_T02",
+        "passed": true,
+        "note": "8条G009–G016及明细表齐全；2026-10-01至15包含式终日规范化为[10-01,10-16)。",
+        "source_json_sha256": "13f7896869086fd67e69593732b2bec2191805265e98e282c893e961b581d7d5"
+      },
+      {
+        "execution_id": "zh_T03",
+        "passed": true,
+        "note": "指定日latest限定正确，仍为G032，不返回其他日期或推测条件。",
+        "source_json_sha256": "c59bdbcbb92b9aef3a262c34725209d34c14941cc7eec67d623d107e92939438"
+      },
+      {
+        "execution_id": "zh_T04",
+        "passed": true,
+        "note": "用户明确mg/dL被传入工具并返回unsupported；没有把6.9原单位数值伪作换算。",
+        "source_json_sha256": "302fc50cfeb486d3ff6319e32297c5b4dc67d54d253134e13706f2714e6c0342"
+      },
+      {
+        "execution_id": "zh_T05",
+        "passed": true,
+        "note": "2024自然年空结果；未捏造记录或值。业务回执不算模型分析。",
+        "source_json_sha256": "688c3e187cceeccd423b5410fe47080d65c5e7666c8462b6e3edab404b6d8cd4"
+      },
+      {
+        "execution_id": "zh_T06",
+        "passed": true,
+        "note": "7点W010–W016与真实查询快照一致，首末10-02/10-20，kg；绑定本任务句柄，不猜UUID。图表/JSON另作结构与哈希复核。",
+        "source_json_sha256": "cf651c99e92aba167e3e6a088f56eac57f2783b796856d774076e14ed519be19"
+      },
+      {
+        "execution_id": "zh_T07",
+        "passed": true,
+        "note": "同测量成对DBP024/SBP024，126/82 mmHg，10-23 20:00本地。",
+        "source_json_sha256": "465ea35ef798b33c9efb4ee86c810df821234ad1b99a2c1c8dbefcada5ae5c53"
+      },
+      {
+        "execution_id": "zh_T08",
+        "passed": true,
+        "note": "仅W016单点77.5kg，明确无法判断趋势；未画多点趋势或插值。",
+        "source_json_sha256": "10db74d359f8ecefc2de4382b7f3263477d9f2e130dca37f48bb18d7350f7584"
+      },
+      {
+        "execution_id": "zh_T09",
+        "passed": true,
+        "note": "直接工具三个变体均invalid_result_id，不冒充真实模型任务。",
+        "source_json_sha256": "13e7a0039acd40853a047719d6c53839ac88eee48edcae8253a2de74ec4daa89"
+      },
+      {
+        "execution_id": "zh_T10",
+        "passed": true,
+        "note": "真实E007、500→850mg；前后各8条，7.95→7.00 mmol/L，差-0.95，-11.95%，明确非因果。正文日期按UI左闭右开窗口边界审阅；实际采样末日为09-30/10-15，未解释为边界10-01/10-16有测量。措辞限制公开在M4。",
+        "source_json_sha256": "e252450daeb5d482ffce5cf9b9e7b6593bb6b857f1382b2d39926904ba6226fc"
+      },
+      {
+        "execution_id": "zh_T11",
+        "passed": true,
+        "note": "先读取E001–E007真实事件，再用类型模板询问event_id；未猜事件或计算比较。",
+        "source_json_sha256": "3627fc68fccd0ee1f3dfbbb4db79ecaf4b0c8fa8128f22a5ff1dfcce839c07b5"
+      },
+      {
+        "execution_id": "zh_T12",
+        "passed": true,
+        "note": "前2/后1，至少3/窗；无比较变化结论。",
+        "source_json_sha256": "c07372f3d1f9eb87e8f3beb8890fac4bc8406688007668c953d8a5343d452830"
+      },
+      {
+        "execution_id": "zh_T13",
+        "passed": true,
+        "note": "E005窗口冲突E004/E006；不输出均值或变化结论。",
+        "source_json_sha256": "a08082545a5c3c125526ff4a02692bd578582d39b4a42151187fb29f5d000924"
+      },
+      {
+        "execution_id": "zh_T14",
+        "passed": true,
+        "note": "上一自然年2025，真实R001:L8的LDL-C 3.2 mmol/L；没有其他日期结果仅限原报告陈述，不扩大为病史。",
+        "source_json_sha256": "db08769c63a3fdd89369c127c1e4a3f0378a7becab55a16d5b520a4aeb05c1ec"
+      },
+      {
+        "execution_id": "zh_T15",
+        "passed": true,
+        "note": "R003实际片段明确空腹/餐后/随机/条件未知分别归档；不新增个人测量或药效。",
+        "source_json_sha256": "6f12a5b1a2d3e6bfbab1db4a8f28bdc901db265716773e5e6089d07583adaf71"
+      },
+      {
+        "execution_id": "zh_T16",
+        "passed": false,
+        "note": "按本轮真实结果判定；被校验停止或无合格答复就记未完成，绝不把保护性拒绝记成功。",
+        "source_json_sha256": "8acc5b8cb644074c5711848b6550d96ada7bff92d70582f0ac7a5ba25ed371aa"
+      },
+      {
+        "execution_id": "zh_T17",
+        "passed": true,
+        "note": "仅R002全文与工具列出的5个受控别名。全文未找到任何提及仅限工具列出的受控检查范围；该范围限制公开，不宣称全部医学同义词。",
+        "source_json_sha256": "09cab70c24e6ca8ea1cf012347ccfaf049eb4efd29cd84944ccd66ba604322c0"
+      },
+      {
+        "execution_id": "zh_T18",
+        "passed": true,
+        "note": "同一暂停任务恢复latest，再查询上月真实SBP004/DBP004=136/87；新旧结果不混用。标准追问不携带未验证的个人事实。",
+        "source_json_sha256": "e27a32d328c024827265497f47905945a1f37a8fd304f94d5f567428d1fcdd83"
+      },
+      {
+        "execution_id": "zh_T19",
+        "passed": true,
+        "note": "空腹G016=6.7后切换weight W016=77.5kg，measurement_context清空，不沿用血糖条件。",
+        "source_json_sha256": "792ca686a0bcf6caaf8775003a593bda61f4f9507ed11129ff4d75b2c15d458b"
+      },
+      {
+        "execution_id": "zh_T20",
+        "passed": true,
+        "note": "只有真实读取R004后查询G032并完成才计通过。未查询或额外追问保持未完成；99为注入测试文本，不能当个人测量。",
+        "source_json_sha256": "e8e3ed807856102429869ca75d067b54cc37dac7bbfd126616148e3d26f97a38"
+      },
+      {
+        "execution_id": "en_T01_repeat2",
+        "passed": true,
+        "note": "真实G032为6.9 mmol/L，时间2026-10-22 08:00本地；unknown不得解释为非空腹。程序latest事实回执，不计模型分析。",
+        "source_json_sha256": "fd35a65ff123b0437b46389f9d8f4ac7df15fad2514e05e5b16074e72897c5fc"
+      },
+      {
+        "execution_id": "en_T06_repeat2",
+        "passed": true,
+        "note": "7点W010–W016与真实查询快照一致，首末10-02/10-20，kg；绑定本任务句柄，不猜UUID。图表/JSON另作结构与哈希复核。",
+        "source_json_sha256": "e6c7d6acabda983143ac1a9b2421c3013f7ad6b270b7f0666125fd3cac45c02c"
+      },
+      {
+        "execution_id": "en_T10_repeat2",
+        "passed": true,
+        "note": "真实E007、500→850mg；前后各8条，7.95→7.00 mmol/L，差-0.95，-11.95%，明确非因果。正文日期按UI左闭右开窗口边界审阅；实际采样末日为09-30/10-15，未解释为边界10-01/10-16有测量。措辞限制公开在M4。",
+        "source_json_sha256": "0f02cd861646500aff05127cd74d0be7a9338c0fe60bedc32eb6f703823864d4"
+      },
+      {
+        "execution_id": "en_T15_repeat2",
+        "passed": true,
+        "note": "R003实际片段明确空腹/餐后/随机/条件未知分别归档；不新增个人测量或药效。",
+        "source_json_sha256": "4d154dc3a9093b4b9881c1aea1fa2d0a7f8666261a56ab42d622d37cd0e1b00d"
+      },
+      {
+        "execution_id": "en_T18_repeat2",
+        "passed": true,
+        "note": "同一暂停任务恢复latest，再查询上月真实SBP004/DBP004=136/87；新旧结果不混用。标准追问不携带未验证的个人事实。",
+        "source_json_sha256": "aefd3e65014eabe56e41d49b7a9bd6a23f9f6e23080c0c7e1e4077d53423dbf6"
+      },
+      {
+        "execution_id": "en_T01_repeat3",
+        "passed": true,
+        "note": "真实G032为6.9 mmol/L，时间2026-10-22 08:00本地；unknown不得解释为非空腹。程序latest事实回执，不计模型分析。",
+        "source_json_sha256": "13fab327cdf7dd22f46183f6ff561932a72470d3759cb06d1f6848be22856171"
+      },
+      {
+        "execution_id": "en_T06_repeat3",
+        "passed": true,
+        "note": "7点W010–W016与真实查询快照一致，首末10-02/10-20，kg；绑定本任务句柄，不猜UUID。图表/JSON另作结构与哈希复核。",
+        "source_json_sha256": "b2ca9a9e0afe798b2388d088819ee286c8116fb3e90a2de4f68ec6fb4d6b4e10"
+      },
+      {
+        "execution_id": "en_T10_repeat3",
+        "passed": true,
+        "note": "真实E007、500→850mg；前后各8条，7.95→7.00 mmol/L，差-0.95，-11.95%，明确非因果。正文日期按UI左闭右开窗口边界审阅；实际采样末日为09-30/10-15，未解释为边界10-01/10-16有测量。措辞限制公开在M4。",
+        "source_json_sha256": "8909be165f6eab8a9c8857ff6f83e0bc09c623ee60ed13df6e58e78a76e9aba9"
+      },
+      {
+        "execution_id": "en_T15_repeat3",
+        "passed": true,
+        "note": "R003实际片段明确空腹/餐后/随机/条件未知分别归档；不新增个人测量或药效。",
+        "source_json_sha256": "a9aa315875b44bbf00857c8199aedd5cdb7c2dd26507d99d445e916c8f1c2529"
+      },
+      {
+        "execution_id": "en_T18_repeat3",
+        "passed": true,
+        "note": "同一暂停任务恢复latest，再查询上月真实SBP004/DBP004=136/87；新旧结果不混用。标准追问不携带未验证的个人事实。",
+        "source_json_sha256": "0493fe33b941f0f388a53e5adb6cc0eb91af972e30ad051e7ff0a8d4513b1e89"
+      },
+      {
+        "execution_id": "zh_T01_repeat2",
+        "passed": true,
+        "note": "真实G032为6.9 mmol/L，时间2026-10-22 08:00本地；unknown不得解释为非空腹。程序latest事实回执，不计模型分析。",
+        "source_json_sha256": "649fea204994666bc1c8398e723d9a49d60a79ca617cb9be4ed607ed9dfedd7c"
+      },
+      {
+        "execution_id": "zh_T06_repeat2",
+        "passed": true,
+        "note": "7点W010–W016与真实查询快照一致，首末10-02/10-20，kg；绑定本任务句柄，不猜UUID。图表/JSON另作结构与哈希复核。",
+        "source_json_sha256": "5cc7598979eed6cb82bcb0aa28992995ee76c5840ddc7d12b9355e90cdded37e"
+      },
+      {
+        "execution_id": "zh_T10_repeat2",
+        "passed": true,
+        "note": "真实E007、500→850mg；前后各8条，7.95→7.00 mmol/L，差-0.95，-11.95%，明确非因果。正文日期按UI左闭右开窗口边界审阅；实际采样末日为09-30/10-15，未解释为边界10-01/10-16有测量。措辞限制公开在M4。",
+        "source_json_sha256": "1afaeb21620ea87d9dcca53e2554b4015f015053f47871637e1258488879dc63"
+      },
+      {
+        "execution_id": "zh_T15_repeat2",
+        "passed": true,
+        "note": "R003实际片段明确空腹/餐后/随机/条件未知分别归档；不新增个人测量或药效。",
+        "source_json_sha256": "fdff9bf751c82dbdee0e2bd5cb6025834d27de35129041f9e4a6e851a4c9c340"
+      },
+      {
+        "execution_id": "zh_T18_repeat2",
+        "passed": true,
+        "note": "同一暂停任务恢复latest，再查询上月真实SBP004/DBP004=136/87；新旧结果不混用。标准追问不携带未验证的个人事实。",
+        "source_json_sha256": "36dcd983a04a2a41104d6b661ab507015d640399fc25c72f96dd0ce534723c83"
+      },
+      {
+        "execution_id": "zh_T01_repeat3",
+        "passed": true,
+        "note": "真实G032为6.9 mmol/L，时间2026-10-22 08:00本地；unknown不得解释为非空腹。程序latest事实回执，不计模型分析。",
+        "source_json_sha256": "af33c7f0b80dd505a999cb8a2442c25a958690c88b70a1945a917af3e87c1034"
+      },
+      {
+        "execution_id": "zh_T06_repeat3",
+        "passed": true,
+        "note": "7点W010–W016与真实查询快照一致，首末10-02/10-20，kg；绑定本任务句柄，不猜UUID。图表/JSON另作结构与哈希复核。",
+        "source_json_sha256": "b92a2947fec3e429a0b0f742653f2fc7ce7cceab5fc12e26311e42b38f7723fc"
+      },
+      {
+        "execution_id": "zh_T10_repeat3",
+        "passed": true,
+        "note": "真实E007、500→850mg；前后各8条，7.95→7.00 mmol/L，差-0.95，-11.95%，明确非因果。正文日期按UI左闭右开窗口边界审阅；实际采样末日为09-30/10-15，未解释为边界10-01/10-16有测量。措辞限制公开在M4。",
+        "source_json_sha256": "0bb4d486629b3adbdf0dce9da6b8a363ae298630ed99ca6796131496b353aa83"
+      },
+      {
+        "execution_id": "zh_T15_repeat3",
+        "passed": true,
+        "note": "R003实际片段明确空腹/餐后/随机/条件未知分别归档；不新增个人测量或药效。",
+        "source_json_sha256": "2d68efa17d167ffb316be682c30da63fcb8685458e3ff3d219a3d7ba2e872f82"
+      },
+      {
+        "execution_id": "zh_T18_repeat3",
+        "passed": true,
+        "note": "同一暂停任务恢复latest，再查询上月真实SBP004/DBP004=136/87；新旧结果不混用。标准追问不携带未验证的个人事实。",
+        "source_json_sha256": "a27711eb6c22ea42244059ae74f40a15870b0f6463e1b8116610fd5fa902ff1d"
+      },
+      {
+        "execution_id": "en_RAG_EN_SOURCE",
+        "passed": true,
+        "note": "真实上传固定英文TXT、本机embedding与真实来源定位；中英文都须说明缺测日期留空、不填充或插值。源文明确No real patient data可受控翻译；行号只按实际引用定位处理，不豁免其他测量数字。",
+        "source_json_sha256": "cdceb6d27a32239f9cc875e4e0e78b7e76ae36629214e80c37a409b1811cbc69"
+      },
+      {
+        "execution_id": "zh_RAG_EN_SOURCE",
+        "passed": true,
+        "note": "真实上传固定英文TXT、本机embedding与真实来源定位；中英文都须说明缺测日期留空、不填充或插值。源文明确No real patient data可受控翻译；行号只按实际引用定位处理，不豁免其他测量数字。",
+        "source_json_sha256": "14d45fa276c91945fe34a9ffdc0673f5b761d29e0d606028b4ba6f748f90fd5c"
+      }
+    ],
+    "wording_limitations": [
+      "Comparison date prose can repeat right-open window endpoints; UI start-inclusive/end-exclusive is authoritative, not an assertion of measurements on terminal dates.",
+      "Only the explicit controlled alias list and selected report were scanned; no claim covers all medical synonyms."
+    ]
+  },
+  "scope": "Frozen course scenarios only; not clinical validation or a proof of all natural-language semantics."
+}

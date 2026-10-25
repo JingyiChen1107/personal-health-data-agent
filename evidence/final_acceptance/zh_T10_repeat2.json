@@ -1,0 +1,1146 @@
+{
+  "id": "T10",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_b1443b25c90a4087bb9fab8a2d139562",
+  "questions": [
+    "2026年10月1日二甲双胍调整前后14天空腹血糖有什么变化？"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "2026年10月1日二甲双胍从500mg增至850mg后，空腹血糖在前后各14天内（前：2026-09-17至10月1日；后：2026-10-02至10月16日）共16条记录显示，调整后平均血糖从7.95 mmol/L降至7.0 mmol/L，下降0.95 mmol/L（约-11.95%）。前后各8条记录，样本充足。注：此变化仅描述时间关联，不能证明由药物调整导致，也不用于用药建议。",
+      "citations": [
+        "E007",
+        "M001",
+        "M002",
+        "G001",
+        "G002",
+        "G003",
+        "G004",
+        "G005",
+        "G006",
+        "G007",
+        "G008",
+        "G009",
+        "G010",
+        "G011",
+        "G012",
+        "G013",
+        "G014",
+        "G015",
+        "G016"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "trace": [
+        {
+          "tool": "query_medications",
+          "call_id": "5b3fc1ee2590447b84037486333df55b",
+          "arguments": {
+            "mode": "events",
+            "event_type": "dose_change"
+          },
+          "status": "ok",
+          "result_id": "res_ce9818da1cfd49bf9ebf392f4e2a032b",
+          "evidence_ids": [
+            "E004",
+            "M004",
+            "M005",
+            "E005",
+            "M006",
+            "E006",
+            "M007",
+            "E007",
+            "M001",
+            "M002"
+          ],
+          "duration_ms": 9,
+          "error_code": null
+        },
+        {
+          "tool": "query_health_data",
+          "call_id": "1185f9e6367d43db8de185424ed99a7c",
+          "arguments": {
+            "indicator": "glucose",
+            "mode": "compare_event",
+            "event_id": "E007",
+            "measurement_context": "fasting",
+            "window_days": 14
+          },
+          "status": "ok",
+          "result_id": "res_18b7f97b926a466f99618b1068134f4a",
+          "evidence_ids": [
+            "E007",
+            "M001",
+            "M002",
+            "G001",
+            "G002",
+            "G003",
+            "G004",
+            "G005",
+            "G006",
+            "G007",
+            "G008",
+            "G009",
+            "G010",
+            "G011",
+            "G012",
+            "G013",
+            "G014",
+            "G015",
+            "G016"
+          ],
+          "duration_ms": 5,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_ce9818da1cfd49bf9ebf392f4e2a032b",
+          "data": {
+            "parameters": {
+              "mode": "events",
+              "medication_name": null,
+              "start_date": null,
+              "end_date": null,
+              "event_id": null,
+              "event_type": "dose_change"
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": null,
+            "range": {
+              "start_date": null,
+              "end_date_exclusive": "2026-10-24",
+              "start_utc": null,
+              "end_utc_exclusive": "2026-10-24T05:00:00Z"
+            },
+            "events": [
+              {
+                "event_id": "E004",
+                "patient_id": "P001",
+                "event_date": "2026-08-25",
+                "event_type": "dose_change",
+                "old_medication_id": "M004",
+                "new_medication_id": "M005",
+                "old_medication": {
+                  "medication_id": "M004",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "10 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-07-01",
+                  "end_date": "2026-08-25"
+                },
+                "new_medication": {
+                  "medication_id": "M005",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "20 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-08-25",
+                  "end_date": "2026-09-02"
+                }
+              },
+              {
+                "event_id": "E005",
+                "patient_id": "P001",
+                "event_date": "2026-09-02",
+                "event_type": "dose_change",
+                "old_medication_id": "M005",
+                "new_medication_id": "M006",
+                "old_medication": {
+                  "medication_id": "M005",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "20 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-08-25",
+                  "end_date": "2026-09-02"
+                },
+                "new_medication": {
+                  "medication_id": "M006",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "10 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-09-02",
+                  "end_date": "2026-09-10"
+                }
+              },
+              {
+                "event_id": "E006",
+                "patient_id": "P001",
+                "event_date": "2026-09-10",
+                "event_type": "dose_change",
+                "old_medication_id": "M006",
+                "new_medication_id": "M007",
+                "old_medication": {
+                  "medication_id": "M006",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "10 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-09-02",
+                  "end_date": "2026-09-10"
+                },
+                "new_medication": {
+                  "medication_id": "M007",
+                  "patient_id": "P001",
+                  "medication_name": "阿托伐他汀",
+                  "dose": "20 mg",
+                  "frequency": "每日一次",
+                  "start_date": "2026-09-10",
+                  "end_date": null
+                }
+              },
+              {
+                "event_id": "E007",
+                "patient_id": "P001",
+                "event_date": "2026-10-01",
+                "event_type": "dose_change",
+                "old_medication_id": "M001",
+                "new_medication_id": "M002",
+                "old_medication": {
+                  "medication_id": "M001",
+                  "patient_id": "P001",
+                  "medication_name": "二甲双胍",
+                  "dose": "500 mg",
+                  "frequency": "每日两次",
+                  "start_date": "2026-07-01",
+                  "end_date": "2026-10-01"
+                },
+                "new_medication": {
+                  "medication_id": "M002",
+                  "patient_id": "P001",
+                  "medication_name": "二甲双胍",
+                  "dose": "850 mg",
+                  "frequency": "每日两次",
+                  "start_date": "2026-10-01",
+                  "end_date": null
+                }
+              }
+            ]
+          },
+          "evidence": [
+            {
+              "source_type": "medication_event",
+              "source_id": "E004",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E004"
+              },
+              "record": {
+                "event_id": "E004",
+                "patient_id": "P001",
+                "event_date": "2026-08-25",
+                "event_type": "dose_change",
+                "old_medication_id": "M004",
+                "new_medication_id": "M005"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M004",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M004"
+              },
+              "record": {
+                "medication_id": "M004",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "10 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-07-01",
+                "end_date": "2026-08-25"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M005",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M005"
+              },
+              "record": {
+                "medication_id": "M005",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "20 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-08-25",
+                "end_date": "2026-09-02"
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E005",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E005"
+              },
+              "record": {
+                "event_id": "E005",
+                "patient_id": "P001",
+                "event_date": "2026-09-02",
+                "event_type": "dose_change",
+                "old_medication_id": "M005",
+                "new_medication_id": "M006"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M006",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M006"
+              },
+              "record": {
+                "medication_id": "M006",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "10 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-09-02",
+                "end_date": "2026-09-10"
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E006",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E006"
+              },
+              "record": {
+                "event_id": "E006",
+                "patient_id": "P001",
+                "event_date": "2026-09-10",
+                "event_type": "dose_change",
+                "old_medication_id": "M006",
+                "new_medication_id": "M007"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M007",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M007"
+              },
+              "record": {
+                "medication_id": "M007",
+                "patient_id": "P001",
+                "medication_name": "阿托伐他汀",
+                "dose": "20 mg",
+                "frequency": "每日一次",
+                "start_date": "2026-09-10",
+                "end_date": null
+              }
+            },
+            {
+              "source_type": "medication_event",
+              "source_id": "E007",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E007"
+              },
+              "record": {
+                "event_id": "E007",
+                "patient_id": "P001",
+                "event_date": "2026-10-01",
+                "event_type": "dose_change",
+                "old_medication_id": "M001",
+                "new_medication_id": "M002"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M001",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M001"
+              },
+              "record": {
+                "medication_id": "M001",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "500 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-07-01",
+                "end_date": "2026-10-01"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M002",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M002"
+              },
+              "record": {
+                "medication_id": "M002",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "850 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-10-01",
+                "end_date": null
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        },
+        {
+          "status": "ok",
+          "result_id": "res_18b7f97b926a466f99618b1068134f4a",
+          "data": {
+            "parameters": {
+              "indicator": "glucose",
+              "mode": "compare_event",
+              "start_date": null,
+              "end_date": null,
+              "measurement_context": "fasting",
+              "event_id": "E007",
+              "window_days": 14,
+              "requested_unit": null
+            },
+            "event": {
+              "event_id": "E007",
+              "patient_id": "P001",
+              "event_date": "2026-10-01",
+              "event_type": "dose_change",
+              "old_medication_id": "M001",
+              "new_medication_id": "M002",
+              "old_medication": {
+                "medication_id": "M001",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "500 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-07-01",
+                "end_date": "2026-10-01"
+              },
+              "new_medication": {
+                "medication_id": "M002",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "850 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-10-01",
+                "end_date": null
+              }
+            },
+            "window_days": 14,
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "windows": {
+              "before": {
+                "start_date": "2026-09-17",
+                "end_date_exclusive": "2026-10-01",
+                "start_utc": "2026-09-17T05:00:00Z",
+                "end_utc_exclusive": "2026-10-01T05:00:00Z"
+              },
+              "after": {
+                "start_date": "2026-10-02",
+                "end_date_exclusive": "2026-10-16",
+                "start_utc": "2026-10-02T05:00:00Z",
+                "end_utc_exclusive": "2026-10-16T05:00:00Z"
+              }
+            },
+            "comparisons": [
+              {
+                "indicator": "glucose",
+                "measurement_context": "fasting",
+                "unit": "mmol/L",
+                "before": {
+                  "count": 8,
+                  "sum": "63.6",
+                  "mean": "7.95",
+                  "min": "7.6",
+                  "max": "8.3",
+                  "record_ids": [
+                    "G001",
+                    "G002",
+                    "G003",
+                    "G004",
+                    "G005",
+                    "G006",
+                    "G007",
+                    "G008"
+                  ],
+                  "display": {
+                    "sum": "63.60",
+                    "mean": "7.95",
+                    "min": "7.60",
+                    "max": "8.30"
+                  }
+                },
+                "after": {
+                  "count": 8,
+                  "sum": "56.0",
+                  "mean": "7.0",
+                  "min": "6.7",
+                  "max": "7.3",
+                  "record_ids": [
+                    "G009",
+                    "G010",
+                    "G011",
+                    "G012",
+                    "G013",
+                    "G014",
+                    "G015",
+                    "G016"
+                  ],
+                  "display": {
+                    "sum": "56.00",
+                    "mean": "7.00",
+                    "min": "6.70",
+                    "max": "7.30"
+                  }
+                },
+                "delta": "-0.95",
+                "percent_change": "-11.94968553459119496855345912",
+                "display": {
+                  "delta": "-0.95",
+                  "percent_change": "-11.95"
+                }
+              }
+            ],
+            "minimum_records_per_window": 3,
+            "total_record_count": 16,
+            "before": {
+              "records": [
+                {
+                  "record_id": "G001",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.8,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-17T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-17T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G002",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 8.0,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-19T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-19T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G003",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.6,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-21T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-21T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G004",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 8.2,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-23T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-23T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G005",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.9,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-25T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-25T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G006",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 8.1,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-27T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-27T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G007",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.7,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-29T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-29T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G008",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 8.3,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-09-30T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-09-30T08:00:00-05:00"
+                }
+              ],
+              "count": 8
+            },
+            "after": {
+              "records": [
+                {
+                  "record_id": "G009",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.2,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-02T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-02T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G010",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.0,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-04T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-04T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G011",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 6.8,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-06T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-06T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G012",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.1,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-08T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-08T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G013",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 6.9,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-10T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-10T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G014",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.3,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-12T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-12T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G015",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 7.0,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-14T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-14T08:00:00-05:00"
+                },
+                {
+                  "record_id": "G016",
+                  "patient_id": "P001",
+                  "indicator": "glucose",
+                  "value": 6.7,
+                  "unit": "mmol/L",
+                  "measured_at": "2026-10-15T13:00:00Z",
+                  "measurement_context": "fasting",
+                  "source": "synthetic_fixture_v1",
+                  "measurement_id": null,
+                  "local_time": "2026-10-15T08:00:00-05:00"
+                }
+              ],
+              "count": 8
+            },
+            "window_complete": true
+          },
+          "evidence": [
+            {
+              "source_type": "medication_event",
+              "source_id": "E007",
+              "locator": {
+                "table": "medication_events",
+                "event_id": "E007"
+              },
+              "record": {
+                "event_id": "E007",
+                "patient_id": "P001",
+                "event_date": "2026-10-01",
+                "event_type": "dose_change",
+                "old_medication_id": "M001",
+                "new_medication_id": "M002"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M001",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M001"
+              },
+              "record": {
+                "medication_id": "M001",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "500 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-07-01",
+                "end_date": "2026-10-01"
+              }
+            },
+            {
+              "source_type": "medication",
+              "source_id": "M002",
+              "locator": {
+                "table": "medications",
+                "medication_id": "M002"
+              },
+              "record": {
+                "medication_id": "M002",
+                "patient_id": "P001",
+                "medication_name": "二甲双胍",
+                "dose": "850 mg",
+                "frequency": "每日两次",
+                "start_date": "2026-10-01",
+                "end_date": null
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G001",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G001"
+              },
+              "record": {
+                "record_id": "G001",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.8,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-17T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-17T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G002",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G002"
+              },
+              "record": {
+                "record_id": "G002",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 8.0,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-19T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-19T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G003",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G003"
+              },
+              "record": {
+                "record_id": "G003",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.6,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-21T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-21T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G004",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G004"
+              },
+              "record": {
+                "record_id": "G004",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 8.2,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-23T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-23T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G005",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G005"
+              },
+              "record": {
+                "record_id": "G005",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.9,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-25T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-25T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G006",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G006"
+              },
+              "record": {
+                "record_id": "G006",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 8.1,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-27T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-27T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G007",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G007"
+              },
+              "record": {
+                "record_id": "G007",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.7,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-29T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-29T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G008",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G008"
+              },
+              "record": {
+                "record_id": "G008",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 8.3,
+                "unit": "mmol/L",
+                "measured_at": "2026-09-30T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-09-30T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G009",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G009"
+              },
+              "record": {
+                "record_id": "G009",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.2,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-02T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-02T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G010",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G010"
+              },
+              "record": {
+                "record_id": "G010",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.0,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-04T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-04T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G011",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G011"
+              },
+              "record": {
+                "record_id": "G011",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.8,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-06T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-06T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G012",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G012"
+              },
+              "record": {
+                "record_id": "G012",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.1,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-08T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-08T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G013",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G013"
+              },
+              "record": {
+                "record_id": "G013",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.9,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-10T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-10T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G014",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G014"
+              },
+              "record": {
+                "record_id": "G014",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.3,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-12T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-12T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G015",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G015"
+              },
+              "record": {
+                "record_id": "G015",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.0,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-14T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-14T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G016"
+              },
+              "record": {
+                "record_id": "G016",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.7,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-15T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-15T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [
+            {
+              "code": "descriptive_only",
+              "message": "比较仅描述记录的时间关联，不证明药物导致变化，不用于用药调整。"
+            }
+          ],
+          "error": null
+        }
+      ],
+      "tool_calls": 2,
+      "model_calls": 3,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 18222,
+        "output_tokens": 559,
+        "backend_requests": 4,
+        "total_tokens": 18781
+      },
+      "duration_ms": 76237,
+      "thread_id": "a83e24a7fea936f3dbc2f19bd2045d42b32a19b768608cc8f9b6217883c8887c",
+      "pending_task_id": "11df8db80fdd4b6ba44972cafd583d1c",
+      "pending": null,
+      "session_state": {
+        "indicator": "glucose",
+        "mode": "compare_event",
+        "start_date": null,
+        "end_date": null,
+        "measurement_context": "fasting",
+        "event_id": "E007",
+        "window_days": 14,
+        "requested_unit": null,
+        "result_id": "res_18b7f97b926a466f99618b1068134f4a"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:23:00.265999+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "compared": true,
+    "means": true,
+    "percent": true,
+    "descriptive": true,
+    "exact_windows_and_samples": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T10_repeat2",
+  "repeat": 2
+}

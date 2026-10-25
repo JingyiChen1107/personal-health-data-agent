@@ -1,0 +1,203 @@
+{
+  "id": "T14",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_39130e2e88a44051bf0c4d3a5c27c60b",
+  "questions": [
+    "Did last year's checkup reports mention LDL?"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "Yes, last year's checkup reports mentioned LDL. Report R001 recorded an LDL-C value of 3.2 mmol/L (R001:L8). The report also stated that no other LDL measurements were provided for different dates (R001:L10). Reports R001 and R002 were scanned in the date range 2025-01-01 to 2026-01-01.",
+      "citations": [
+        "R001:L8",
+        "R001:L10",
+        "R001:SCAN",
+        "R002:SCAN"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "12d457b80bee4a87a4da1449b6281d7a",
+          "arguments": {
+            "query": "LDL",
+            "mode": "mention_check",
+            "report_id": null,
+            "start_date": "2025-01-01",
+            "end_date": "2026-01-01",
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_3f9d7c2ac25b4d6781177684b13fd4e9",
+          "evidence_ids": [
+            "R001:SCAN",
+            "R002:SCAN",
+            "R001:L8",
+            "R001:L10"
+          ],
+          "duration_ms": 4,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_3f9d7c2ac25b4d6781177684b13fd4e9",
+          "data": {
+            "mode": "mention_check",
+            "scope_report_ids": [
+              "R001",
+              "R002"
+            ],
+            "scope_report_count": 2,
+            "date_field": "report_date",
+            "start_date": "2025-01-01",
+            "end_date_exclusive": "2026-01-01",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "source_id": "R001:L8",
+                "report_id": "R001",
+                "text": "本次报告记录 LDL-C（低密度脂蛋白胆固醇）为 3.2 mmol/L。",
+                "start_line": 8,
+                "end_line": 8
+              },
+              {
+                "source_id": "R001:L10",
+                "report_id": "R001",
+                "text": "本报告没有提供其他日期的 LDL 测量结果。",
+                "start_line": 10,
+                "end_line": 10
+              }
+            ],
+            "checked_aliases": [
+              "LDL",
+              "LDL-C",
+              "低密度脂蛋白",
+              "低密度脂蛋白胆固醇",
+              "low-density lipoprotein"
+            ],
+            "coverage": "full_text",
+            "absence_scope": "仅限上述报告全文和列出的别名"
+          },
+          "evidence": [
+            {
+              "source_type": "report_scan",
+              "source_id": "R001:SCAN",
+              "locator": {
+                "report_id": "R001",
+                "file_path": "sample_data/reports/2025-10-10_checkup.txt",
+                "content_hash": "4d9372a8f803af1e1c36fa3a94d0454290df1ad9081e7d0aa8fdac1f326b321c",
+                "start_line": 1,
+                "end_line": 13
+              },
+              "record": {
+                "report_date": "2025-10-10",
+                "checked_aliases": [
+                  "LDL",
+                  "LDL-C",
+                  "低密度脂蛋白",
+                  "低密度脂蛋白胆固醇",
+                  "low-density lipoprotein"
+                ],
+                "coverage": "full_text",
+                "match_count": 2
+              }
+            },
+            {
+              "source_type": "report_scan",
+              "source_id": "R002:SCAN",
+              "locator": {
+                "report_id": "R002",
+                "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+                "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+                "start_line": 1,
+                "end_line": 9
+              },
+              "record": {
+                "report_date": "2025-12-05",
+                "checked_aliases": [
+                  "LDL",
+                  "LDL-C",
+                  "低密度脂蛋白",
+                  "低密度脂蛋白胆固醇",
+                  "low-density lipoprotein"
+                ],
+                "coverage": "full_text",
+                "match_count": 0
+              }
+            },
+            {
+              "source_type": "report_text",
+              "source_id": "R001:L8",
+              "locator": {
+                "file_path": "sample_data/reports/2025-10-10_checkup.txt",
+                "content_hash": "4d9372a8f803af1e1c36fa3a94d0454290df1ad9081e7d0aa8fdac1f326b321c",
+                "start_line": 8,
+                "end_line": 8
+              },
+              "record": {
+                "source_id": "R001:L8",
+                "report_id": "R001",
+                "text": "本次报告记录 LDL-C（低密度脂蛋白胆固醇）为 3.2 mmol/L。",
+                "start_line": 8,
+                "end_line": 8
+              }
+            },
+            {
+              "source_type": "report_text",
+              "source_id": "R001:L10",
+              "locator": {
+                "file_path": "sample_data/reports/2025-10-10_checkup.txt",
+                "content_hash": "4d9372a8f803af1e1c36fa3a94d0454290df1ad9081e7d0aa8fdac1f326b321c",
+                "start_line": 10,
+                "end_line": 10
+              },
+              "record": {
+                "source_id": "R001:L10",
+                "report_id": "R001",
+                "text": "本报告没有提供其他日期的 LDL 测量结果。",
+                "start_line": 10,
+                "end_line": 10
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 2,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 10185,
+        "output_tokens": 323,
+        "backend_requests": 3,
+        "total_tokens": 10508
+      },
+      "duration_ms": 25355,
+      "thread_id": "1dbcea96b020b1940831c8700b8b64b3b717884ab1408d498d2b0a8a022f99f2",
+      "pending_task_id": "2a8d27c0a40c46ea80a8f42398d2164a",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T21:54:18.701045+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "year_full_scan": true,
+    "value": true,
+    "report_label": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "en_T14",
+  "repeat": 1
+}

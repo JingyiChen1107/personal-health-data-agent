@@ -1,0 +1,276 @@
+{
+  "id": "T16",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_358094f4bae94da891b02d6afc5876c6",
+  "questions": [
+    "Find the thyroid follow-up arrangements in report R002."
+  ],
+  "turns": [
+    {
+      "status": "error",
+      "answer": "The answer failed factual verification. No conclusion was accepted; inspect the tool facts and original sources.",
+      "citations": [],
+      "needs_clarification": false,
+      "error": {
+        "code": "unverified_facts",
+        "message": "The answer failed factual verification. No conclusion was accepted; inspect the tool facts and original sources."
+      },
+      "fallback_facts": [
+        {
+          "source_type": "report_text",
+          "source_id": "R002:C001",
+          "locator": {
+            "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+            "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+            "start_line": 1,
+            "end_line": 9
+          },
+          "record": {
+            "chunk": 1,
+            "start_char": 0,
+            "end_char": 164,
+            "start_line": 1,
+            "end_line": 9,
+            "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+            "report_id": "R002",
+            "report_date": "2025-12-05",
+            "source_id": "R002:C001",
+            "score": 0.174832
+          }
+        }
+      ],
+      "evidence_validation": {
+        "passed": false,
+        "issues": [
+          {
+            "code": "unsupported_whole_report_absence"
+          }
+        ],
+        "scope": "numeric tokens and units against cited tool facts; selected comparison and single-point rules; not complete natural-language semantic verification"
+      },
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "dc53ec1fa743470c99012b714b7acae1",
+          "arguments": {
+            "query": "thyroid follow-up arrangements",
+            "mode": "semantic",
+            "report_id": "R002",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_f7c32470ae45472da8d5c4050bb39a4d",
+          "evidence_ids": [
+            "R002:C001"
+          ],
+          "duration_ms": 49,
+          "error_code": null
+        },
+        {
+          "tool": "search_health_documents",
+          "call_id": "a755228fcedc4fb1b7f96aa6a83731f6",
+          "arguments": {
+            "query": "thyroid follow-up arrangements",
+            "mode": "mention_check",
+            "report_id": "R002",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "error",
+          "result_id": "res_f593c379ed4b46e1a5fb9fdd24d7ae55",
+          "evidence_ids": [],
+          "duration_ms": 0,
+          "error_code": "report_date_mismatch",
+          "origin": "policy_guard"
+        },
+        {
+          "tool": "search_health_documents",
+          "call_id": "beaadc199d5c4cda840d471efbff3eaf",
+          "arguments": {
+            "query": "thyroid follow-up arrangements",
+            "mode": "semantic",
+            "report_id": "R002",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_f941039c62af48aaaa3f2d2380e9e687",
+          "evidence_ids": [
+            "R002:C001"
+          ],
+          "duration_ms": 54,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_f7c32470ae45472da8d5c4050bb39a4d",
+          "data": {
+            "mode": "semantic",
+            "scope_report_ids": [
+              "R002"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.174832
+              }
+            ],
+            "coverage": "top_k_only",
+            "absence_scope": "检索片段不能证明整份报告未提及",
+            "embedding_model": "embeddinggemma:300m"
+          },
+          "evidence": [
+            {
+              "source_type": "report_text",
+              "source_id": "R002:C001",
+              "locator": {
+                "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+                "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+                "start_line": 1,
+                "end_line": 9
+              },
+              "record": {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.174832
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        },
+        {
+          "status": "error",
+          "result_id": "res_f593c379ed4b46e1a5fb9fdd24d7ae55",
+          "data": {
+            "required_parameters": {
+              "start_date": null,
+              "end_date": null,
+              "mode": "semantic"
+            }
+          },
+          "evidence": [],
+          "warnings": [],
+          "error": {
+            "code": "report_date_mismatch",
+            "message": "检索条件与用户范围不一致。去年是上一自然年；仅指定报告编号不能增加日期过滤；报告内容问答用semantic，全文是否提及才用mention_check。请按required_parameters纠正。"
+          }
+        },
+        {
+          "status": "ok",
+          "result_id": "res_f941039c62af48aaaa3f2d2380e9e687",
+          "data": {
+            "mode": "semantic",
+            "scope_report_ids": [
+              "R002"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.174832
+              }
+            ],
+            "coverage": "top_k_only",
+            "absence_scope": "检索片段不能证明整份报告未提及",
+            "embedding_model": "embeddinggemma:300m"
+          },
+          "evidence": [
+            {
+              "source_type": "report_text",
+              "source_id": "R002:C001",
+              "locator": {
+                "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+                "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+                "start_line": 1,
+                "end_line": 9
+              },
+              "record": {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.174832
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 3,
+      "model_calls": 5,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 22347,
+        "output_tokens": 536,
+        "backend_requests": 6,
+        "total_tokens": 22883
+      },
+      "duration_ms": 44456,
+      "thread_id": "5036ae3d9494223166bba2e82bcd0df48e7717c50f184ffb787a43de38f6d1c6",
+      "pending_task_id": "fdc900c5962242769a493b4e19ca8656",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T21:55:23.957540+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": false,
+  "checks": {
+    "completed": false,
+    "citations_grounded": true,
+    "semantic": true,
+    "limited_absence": false,
+    "no_invented_plan": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "en_T16",
+  "repeat": 1
+}

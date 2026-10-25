@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gsir-health-agent"
+version = "0.9.0"
+description = "Synthetic personal health agent course prototype"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph==1.2.16",
+    "langgraph-checkpoint-sqlite==3.1.2",
+    "openai==2.54.0",
+    "streamlit==1.66.1",
+    "python-dotenv==1.2.4",
+    "httpx==0.28.1",
+    "chromadb==1.5.9",
+    "matplotlib==3.11.2",
+]
+
+[project.scripts]
+health-agent = "health_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["health_agent*"]
+
+[tool.setuptools.package-data]
+health_agent = ["schema.sql"]

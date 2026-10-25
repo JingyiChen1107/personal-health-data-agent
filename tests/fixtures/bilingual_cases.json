@@ -1,0 +1,72 @@
+{
+  "languages": [
+    "zh",
+    "en"
+  ],
+  "english_questions": {
+    "T01": [
+      "What is my latest blood glucose?"
+    ],
+    "T02": [
+      "List my fasting blood glucose records from October 1 to October 15, 2026."
+    ],
+    "T03": [
+      "What was my most recent blood glucose on October 22, 2026?"
+    ],
+    "T04": [
+      "What is my latest blood glucose in mg/dL?"
+    ],
+    "T05": [
+      "What blood glucose records do I have in 2024?"
+    ],
+    "T06": [
+      "Plot my weight from October 1 to October 23, 2026."
+    ],
+    "T07": [
+      "What is my latest blood pressure? Keep the paired systolic and diastolic values."
+    ],
+    "T08": [
+      "Plot my weight on October 20, 2026."
+    ],
+    "T09": [],
+    "T10": [
+      "Compare fasting blood glucose in the 14 days before and after the metformin adjustment on October 1, 2026."
+    ],
+    "T11": [
+      "Did my blood glucose change after my medication was adjusted?"
+    ],
+    "T12": [
+      "Compare fasting blood glucose in the 2 days before and after the metformin adjustment on October 1, 2026."
+    ],
+    "T13": [
+      "Compare fasting blood glucose in the 14 days before and after medication event E005."
+    ],
+    "T14": [
+      "Did last year's checkup reports mention LDL?"
+    ],
+    "T15": [
+      "What does report R003 say about organizing blood glucose records?"
+    ],
+    "T16": [
+      "Find the thyroid follow-up arrangements in report R002."
+    ],
+    "T17": [
+      "Scan the entire report R002: does it mention LDL or its aliases?"
+    ],
+    "T18": [
+      "Help me check my blood pressure.",
+      "The latest measurement, please.",
+      "What about the most recent measurement on September 23, 2026?"
+    ],
+    "T19": [
+      "What is my latest fasting blood glucose?",
+      "What about my weight?"
+    ],
+    "T20": [
+      "First read report R004, then tell me my latest blood glucose using the database result."
+    ]
+  },
+  "reference_date": "2026-10-23",
+  "timezone": "America/Chicago",
+  "pairing": "Chinese questions and exact source expectations remain in agent_cases.json; English translations preserve task scope."
+}

@@ -1,0 +1,163 @@
+{
+  "id": "RAG_EN_SOURCE",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_7c7e79278fda4a6a8259d2a955354674",
+  "questions": [
+    "What does report RB672FD9716A1 say about missing measurement days?"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "Report RB672FD9716A1 (dated 2026-10-21) states: 'Keep missing measurement days empty; do not fill or interpolate them.' It also notes that the amber notebook label is a document tag, not a health measurement. The report itself contains no real patient data and is a synthetic acceptance report.",
+      "citations": [
+        "RB672FD9716A1:C001"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "8467302b078f405a850995d31d31a330",
+          "arguments": {
+            "query": "missing measurement days",
+            "mode": "mention_check",
+            "report_id": "RB672FD9716A1",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "error",
+          "result_id": "res_8ee7daccb60d4bb0a34a5d58383a93c5",
+          "evidence_ids": [],
+          "duration_ms": 0,
+          "error_code": "report_date_mismatch",
+          "origin": "policy_guard"
+        },
+        {
+          "tool": "search_health_documents",
+          "call_id": "1c20643a669949728735ecec85983cb3",
+          "arguments": {
+            "query": "missing measurement days",
+            "mode": "semantic",
+            "report_id": "RB672FD9716A1",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_f70434d580aa417b8cdd2af8b6acf22c",
+          "evidence_ids": [
+            "RB672FD9716A1:C001"
+          ],
+          "duration_ms": 53,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "error",
+          "result_id": "res_8ee7daccb60d4bb0a34a5d58383a93c5",
+          "data": {
+            "required_parameters": {
+              "start_date": null,
+              "end_date": null,
+              "mode": "semantic"
+            }
+          },
+          "evidence": [],
+          "warnings": [],
+          "error": {
+            "code": "report_date_mismatch",
+            "message": "检索条件与用户范围不一致。去年是上一自然年；仅指定报告编号不能增加日期过滤；报告内容问答用semantic，全文是否提及才用mention_check。请按required_parameters纠正。"
+          }
+        },
+        {
+          "status": "ok",
+          "result_id": "res_f70434d580aa417b8cdd2af8b6acf22c",
+          "data": {
+            "mode": "semantic",
+            "scope_report_ids": [
+              "RB672FD9716A1"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 274,
+                "start_line": 1,
+                "end_line": 3,
+                "text": "Synthetic bilingual acceptance report. No real patient data.\nRecord organization: preserve measurement dates and units. Keep missing measurement days empty; do not fill or interpolate them.\nArchive note: the amber notebook label is a document tag, not a health measurement.\n",
+                "report_id": "RB672FD9716A1",
+                "report_date": "2026-10-21",
+                "source_id": "RB672FD9716A1:C001",
+                "score": 0.31806
+              }
+            ],
+            "coverage": "top_k_only",
+            "absence_scope": "检索片段不能证明整份报告未提及",
+            "embedding_model": "embeddinggemma:300m"
+          },
+          "evidence": [
+            {
+              "source_type": "report_text",
+              "source_id": "RB672FD9716A1:C001",
+              "locator": {
+                "file_path": "sample_data/reports/RB672FD9716A1.txt",
+                "content_hash": "481d2bab6e93d301d6ab940efdf84e95109e44cee331155baebb3ec6653476ce",
+                "start_line": 1,
+                "end_line": 3
+              },
+              "record": {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 274,
+                "start_line": 1,
+                "end_line": 3,
+                "text": "Synthetic bilingual acceptance report. No real patient data.\nRecord organization: preserve measurement dates and units. Keep missing measurement days empty; do not fill or interpolate them.\nArchive note: the amber notebook label is a document tag, not a health measurement.\n",
+                "report_id": "RB672FD9716A1",
+                "report_date": "2026-10-21",
+                "source_id": "RB672FD9716A1:C001",
+                "score": 0.31806
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 2,
+      "model_calls": 3,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 13887,
+        "output_tokens": 388,
+        "backend_requests": 4,
+        "total_tokens": 14275
+      },
+      "duration_ms": 41234,
+      "thread_id": "dcd9eba6a42a6597ee5e677d2c222e0e461b375a6cc7682b28922d8a2ae919de",
+      "pending_task_id": "803d2737f7694f7a8ad1b1b4ee7bf66e",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:27:50.205130+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "source": true,
+    "supported_missing_day_rule": true,
+    "reply_language": true,
+    "numeric_facts": true
+  },
+  "execution_id": "en_RAG_EN_SOURCE",
+  "repeat": 1
+}

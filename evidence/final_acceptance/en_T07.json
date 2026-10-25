@@ -1,0 +1,199 @@
+{
+  "id": "T07",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_09cefd7ffaf943ff9faed333699d69ed",
+  "questions": [
+    "What is my latest blood pressure? Keep the paired systolic and diastolic values."
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "Latest blood pressure: 126/82 mmHg. Measured at 2026-10-23T20:00:00-05:00 (local time). Measurement condition: unknown. [DBP024] [SBP024] This query returns the latest measurement, not the complete history.",
+      "citations": [
+        "DBP024",
+        "SBP024"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "record_receipt",
+      "record_query_mode": "latest",
+      "model_answer_accepted": null,
+      "source_result_id": "res_f8fcbfbbf42244b1968eccc1c9e7a9d8",
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "e53f46d52ffd482e8b560f26a0d58931",
+          "arguments": {
+            "indicator": "blood_pressure",
+            "mode": "latest",
+            "measurement_context": null
+          },
+          "status": "ok",
+          "result_id": "res_f8fcbfbbf42244b1968eccc1c9e7a9d8",
+          "evidence_ids": [
+            "DBP024",
+            "SBP024"
+          ],
+          "duration_ms": 7,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_f8fcbfbbf42244b1968eccc1c9e7a9d8",
+          "data": {
+            "parameters": {
+              "indicator": "blood_pressure",
+              "mode": "latest",
+              "start_date": null,
+              "end_date": null,
+              "measurement_context": null,
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": null,
+            "range": {
+              "start_date": null,
+              "end_date_exclusive": "2026-10-24",
+              "start_utc": null,
+              "end_utc_exclusive": "2026-10-24T05:00:00Z"
+            },
+            "records": [
+              {
+                "record_id": "DBP024",
+                "patient_id": "P001",
+                "indicator": "diastolic_blood_pressure",
+                "value": 82.0,
+                "unit": "mmHg",
+                "measured_at": "2026-10-24T01:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": "BP024",
+                "local_time": "2026-10-23T20:00:00-05:00"
+              },
+              {
+                "record_id": "SBP024",
+                "patient_id": "P001",
+                "indicator": "systolic_blood_pressure",
+                "value": 126.0,
+                "unit": "mmHg",
+                "measured_at": "2026-10-24T01:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": "BP024",
+                "local_time": "2026-10-23T20:00:00-05:00"
+              }
+            ],
+            "count": 2,
+            "unit": "mmHg",
+            "measurements": [
+              {
+                "measurement_id": "BP024",
+                "measured_at": "2026-10-24T01:00:00Z",
+                "local_time": "2026-10-23T20:00:00-05:00",
+                "unit": "mmHg",
+                "systolic": 126.0,
+                "diastolic": 82.0,
+                "record_ids": [
+                  "SBP024",
+                  "DBP024"
+                ]
+              }
+            ],
+            "measurement_count": 1
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "DBP024",
+              "locator": {
+                "table": "health_records",
+                "record_id": "DBP024"
+              },
+              "record": {
+                "record_id": "DBP024",
+                "patient_id": "P001",
+                "indicator": "diastolic_blood_pressure",
+                "value": 82.0,
+                "unit": "mmHg",
+                "measured_at": "2026-10-24T01:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": "BP024",
+                "local_time": "2026-10-23T20:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "SBP024",
+              "locator": {
+                "table": "health_records",
+                "record_id": "SBP024"
+              },
+              "record": {
+                "record_id": "SBP024",
+                "patient_id": "P001",
+                "indicator": "systolic_blood_pressure",
+                "value": 126.0,
+                "unit": "mmHg",
+                "measured_at": "2026-10-24T01:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": "BP024",
+                "local_time": "2026-10-23T20:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 1,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 3029,
+        "output_tokens": 53,
+        "backend_requests": 1,
+        "total_tokens": 3082
+      },
+      "duration_ms": 5160,
+      "thread_id": "0a31550a46dec8ea9dc3a86e5531e9ded7862b6fb9aa82dca0d58e148152cd7a",
+      "pending_task_id": "98e6a48607ca4a1f8642b096856ee6f6",
+      "pending": null,
+      "session_state": {
+        "indicator": "blood_pressure",
+        "mode": "latest",
+        "start_date": null,
+        "end_date": null,
+        "measurement_context": null,
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null,
+        "result_id": "res_f8fcbfbbf42244b1968eccc1c9e7a9d8"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T21:42:09.981203+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "paired": true,
+    "values": true,
+    "sources": true,
+    "local_date": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "en_T07",
+  "repeat": 1
+}

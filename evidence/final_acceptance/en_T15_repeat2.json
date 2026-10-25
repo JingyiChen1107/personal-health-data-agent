@@ -1,0 +1,130 @@
+{
+  "id": "T15",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_916cefe266ee4e40ace9da8769e7fdda",
+  "questions": [
+    "What does report R003 say about organizing blood glucose records?"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "Report R003 (2026-10-16) states that blood glucose records should be archived separately by condition: fasting, postprandial, random, and unknown. It also notes that this document does not contain new measurement values or explain any medication adjustment effects.",
+      "citations": [
+        "R003:C001"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "d1e0e7d954eb41e08d7acc1ef8f91c77",
+          "arguments": {
+            "query": "organizing blood glucose records",
+            "mode": "semantic",
+            "report_id": "R003",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_6db1c61222bd4b70a7ef3a9e4ac15166",
+          "evidence_ids": [
+            "R003:C001"
+          ],
+          "duration_ms": 59,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_6db1c61222bd4b70a7ef3a9e4ac15166",
+          "data": {
+            "mode": "semantic",
+            "scope_report_ids": [
+              "R003"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 173,
+                "start_line": 1,
+                "end_line": 12,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R003\n报告日期：2026-10-16\n模拟用户：P001\n标题：测量记录整理摘要\n\n血糖记录\n记录整理意见：空腹、餐后、随机及条件未知的血糖记录应分别归档。\n本文件不包含新的测量数值，也不说明任何用药调整的效果。\n\n体重记录\n记录整理意见：按测量日期展示体重记录；未测量的日期保持空缺。\n",
+                "report_id": "R003",
+                "report_date": "2026-10-16",
+                "source_id": "R003:C001",
+                "score": 0.429733
+              }
+            ],
+            "coverage": "top_k_only",
+            "absence_scope": "检索片段不能证明整份报告未提及",
+            "embedding_model": "embeddinggemma:300m"
+          },
+          "evidence": [
+            {
+              "source_type": "report_text",
+              "source_id": "R003:C001",
+              "locator": {
+                "file_path": "sample_data/reports/2026-10-16_followup.txt",
+                "content_hash": "b992d1878e51da8537c4264937ae8b9cc063bf10da3b230ef05b056e26845cee",
+                "start_line": 1,
+                "end_line": 12
+              },
+              "record": {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 173,
+                "start_line": 1,
+                "end_line": 12,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R003\n报告日期：2026-10-16\n模拟用户：P001\n标题：测量记录整理摘要\n\n血糖记录\n记录整理意见：空腹、餐后、随机及条件未知的血糖记录应分别归档。\n本文件不包含新的测量数值，也不说明任何用药调整的效果。\n\n体重记录\n记录整理意见：按测量日期展示体重记录；未测量的日期保持空缺。\n",
+                "report_id": "R003",
+                "report_date": "2026-10-16",
+                "source_id": "R003:C001",
+                "score": 0.429733
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 2,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 10178,
+        "output_tokens": 248,
+        "backend_requests": 3,
+        "total_tokens": 10426
+      },
+      "duration_ms": 27049,
+      "thread_id": "fcdf420a675767dcf0c66a62fe88d88bf7f1458c57d77da7fcacd3e8db89dc1e",
+      "pending_task_id": "914e7753bd124596b16406ba8b0b415b",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:13:23.955176+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "semantic": true,
+    "supported_quote": true,
+    "located": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "en_T15_repeat2",
+  "repeat": 2
+}

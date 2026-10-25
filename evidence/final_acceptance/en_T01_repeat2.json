@@ -1,0 +1,156 @@
+{
+  "id": "T01",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_3fe78cf552194617ad1b5f1a34b1dc29",
+  "questions": [
+    "What is my latest blood glucose?"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "Latest blood glucose: 6.9 mmol/L. Measured at 2026-10-22T08:00:00-05:00 (local time). Measurement condition: unknown. [G032] This query returns the latest measurement, not the complete history.",
+      "citations": [
+        "G032"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "record_receipt",
+      "record_query_mode": "latest",
+      "model_answer_accepted": null,
+      "source_result_id": "res_59c127677d6e413eab2b469aec8b43fe",
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "faa0c441e21d449db2e2c393be6f4cc1",
+          "arguments": {
+            "indicator": "glucose",
+            "mode": "latest",
+            "measurement_context": null
+          },
+          "status": "ok",
+          "result_id": "res_59c127677d6e413eab2b469aec8b43fe",
+          "evidence_ids": [
+            "G032"
+          ],
+          "duration_ms": 5,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_59c127677d6e413eab2b469aec8b43fe",
+          "data": {
+            "parameters": {
+              "indicator": "glucose",
+              "mode": "latest",
+              "start_date": null,
+              "end_date": null,
+              "measurement_context": null,
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": null,
+            "range": {
+              "start_date": null,
+              "end_date_exclusive": "2026-10-24",
+              "start_utc": null,
+              "end_utc_exclusive": "2026-10-24T05:00:00Z"
+            },
+            "records": [
+              {
+                "record_id": "G032",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.9,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-22T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-22T08:00:00-05:00"
+              }
+            ],
+            "count": 1,
+            "unit": "mmol/L"
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "G032",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G032"
+              },
+              "record": {
+                "record_id": "G032",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.9,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-22T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-22T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [
+            {
+              "code": "unknown_measurement_context",
+              "message": "部分记录的测量条件未知，不能表述为空腹。"
+            }
+          ],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 1,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 3018,
+        "output_tokens": 53,
+        "backend_requests": 1,
+        "total_tokens": 3071
+      },
+      "duration_ms": 9931,
+      "thread_id": "c8f41a59099474111feafc9b667fcbc9c12ced2a40f269bf8a38d75c235437fc",
+      "pending_task_id": "31346f1fac57454aacfe6ca70b39e7ad",
+      "pending": null,
+      "session_state": {
+        "indicator": "glucose",
+        "mode": "latest",
+        "start_date": null,
+        "end_date": null,
+        "measurement_context": null,
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null,
+        "result_id": "res_59c127677d6e413eab2b469aec8b43fe"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:11:18.217790+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "value": true,
+    "source": true,
+    "unknown_context": true,
+    "not_nonfasting": true,
+    "correct_record": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "en_T01_repeat2",
+  "repeat": 2
+}

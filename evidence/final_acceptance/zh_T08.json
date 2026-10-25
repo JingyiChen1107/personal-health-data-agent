@@ -1,0 +1,250 @@
+{
+  "id": "T08",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_3d402e3bbe4b43fc96a8139712537624",
+  "questions": [
+    "画出2026年10月20日的体重趋势。"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "图表已生成。1个原始数据点，单位：kg。实际记录首末时间：2026-10-20T08:00:00-05:00 至 2026-10-20T08:00:00-05:00。仅单点记录，无法判断趋势。",
+      "citations": [
+        "W016"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "tool_receipt",
+      "model_answer_accepted": null,
+      "artifact_completed": true,
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "ab19ec33fe944540ac4d35717a1da683",
+          "arguments": {
+            "indicator": "weight",
+            "mode": "series",
+            "start_date": "2026-10-20",
+            "end_date": "2026-10-21",
+            "measurement_context": null
+          },
+          "status": "ok",
+          "result_id": "res_830c44e974354017963c482f309d2121",
+          "evidence_ids": [
+            "W016"
+          ],
+          "duration_ms": 4,
+          "error_code": null
+        },
+        {
+          "tool": "plot_health_trend",
+          "call_id": "16a0901b3e3843d48b8e8b1a777c55bf",
+          "arguments": {
+            "result_id": "res_830c44e974354017963c482f309d2121",
+            "chart_type": "line"
+          },
+          "status": "ok",
+          "result_id": "res_aaf03e42f2454e49b9b3fd13a0f387cf",
+          "evidence_ids": [
+            "W016"
+          ],
+          "duration_ms": 123,
+          "error_code": null,
+          "model_source_handle": "query_1"
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_830c44e974354017963c482f309d2121",
+          "data": {
+            "parameters": {
+              "indicator": "weight",
+              "mode": "series",
+              "start_date": "2026-10-20",
+              "end_date": "2026-10-21",
+              "measurement_context": null,
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": 1,
+            "range": {
+              "start_date": "2026-10-20",
+              "end_date_exclusive": "2026-10-21",
+              "start_utc": "2026-10-20T05:00:00Z",
+              "end_utc_exclusive": "2026-10-21T05:00:00Z"
+            },
+            "records": [
+              {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            ],
+            "count": 1,
+            "unit": "kg"
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "W016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "W016"
+              },
+              "record": {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        },
+        {
+          "status": "ok",
+          "result_id": "res_aaf03e42f2454e49b9b3fd13a0f387cf",
+          "data": {
+            "chart": {
+              "chart_id": "chart_a9c8e60b4c44c0f41972",
+              "source_result_id": "res_830c44e974354017963c482f309d2121",
+              "chart_type": "line",
+              "point_count": 1,
+              "measurement_count": 1,
+              "record_ids": [
+                "W016"
+              ],
+              "date_range": {
+                "first_local_time": "2026-10-20T08:00:00-05:00",
+                "last_local_time": "2026-10-20T08:00:00-05:00"
+              },
+              "query_range": {
+                "start_date": "2026-10-20",
+                "end_date_exclusive": "2026-10-21",
+                "start_utc": "2026-10-20T05:00:00Z",
+                "end_utc_exclusive": "2026-10-21T05:00:00Z"
+              },
+              "panels": [
+                {
+                  "indicator": "weight",
+                  "measurement_context": "unknown",
+                  "unit": "kg",
+                  "line_drawn": false,
+                  "point_count": 1,
+                  "points": [
+                    {
+                      "record_id": "W016",
+                      "measurement_id": null,
+                      "local_time": "2026-10-20T08:00:00-05:00",
+                      "value": 77.5
+                    }
+                  ]
+                }
+              ],
+              "synthetic_only": true,
+              "language": "zh",
+              "timezone": "America/Chicago",
+              "image_path": "${PROJECT_ROOT}/artifacts/charts/a9c8e60b4c44c0f41972/chart.png",
+              "svg_path": "${PROJECT_ROOT}/artifacts/charts/a9c8e60b4c44c0f41972/chart.svg",
+              "data_path": "${PROJECT_ROOT}/artifacts/charts/a9c8e60b4c44c0f41972/data.json"
+            }
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "W016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "W016"
+              },
+              "record": {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [
+            {
+              "code": "single_point",
+              "message": "单点仅标记，不形成趋势线，不能据此判断趋势。"
+            }
+          ],
+          "error": null
+        }
+      ],
+      "tool_calls": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 5226,
+        "output_tokens": 125,
+        "backend_requests": 2,
+        "total_tokens": 5351
+      },
+      "duration_ms": 13439,
+      "thread_id": "7f381016f66b5308a50524cc6cf13d3b08d83a107667d06dd4ef11f7c61ec6ca",
+      "pending_task_id": "2a128d745a594e6b91d2c536a7eba2d9",
+      "pending": null,
+      "session_state": {
+        "indicator": "weight",
+        "mode": "series",
+        "start_date": "2026-10-20",
+        "end_date": "2026-10-21",
+        "measurement_context": null,
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null,
+        "result_id": "res_830c44e974354017963c482f309d2121"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:05:09.634957+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "chart": true,
+    "real_query_id": true,
+    "expected_records": true,
+    "expected_points": true,
+    "identical_points": true,
+    "query_end": true,
+    "png_and_json": true,
+    "marker_only": true,
+    "no_trend_claim": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T08",
+  "repeat": 1
+}

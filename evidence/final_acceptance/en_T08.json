@@ -1,0 +1,250 @@
+{
+  "id": "T08",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_69cf8ae463124a0984e6437cf59944c3",
+  "questions": [
+    "Plot my weight on October 20, 2026."
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "Chart generated with 1 original data points. Unit: kg. Actual first and last record times: 2026-10-20T08:00:00-05:00 to 2026-10-20T08:00:00-05:00. Only one point: a trend cannot be determined.",
+      "citations": [
+        "W016"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "tool_receipt",
+      "model_answer_accepted": null,
+      "artifact_completed": true,
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "080676a9961147d29b4d2f72180c49b1",
+          "arguments": {
+            "indicator": "weight",
+            "mode": "latest",
+            "start_date": "2026-10-20",
+            "end_date": "2026-10-21",
+            "measurement_context": null
+          },
+          "status": "ok",
+          "result_id": "res_0973db37723e40b69145174aa622b790",
+          "evidence_ids": [
+            "W016"
+          ],
+          "duration_ms": 5,
+          "error_code": null
+        },
+        {
+          "tool": "plot_health_trend",
+          "call_id": "2805ed5399fc4d12b01b70a191f70ef2",
+          "arguments": {
+            "result_id": "res_0973db37723e40b69145174aa622b790",
+            "chart_type": "line"
+          },
+          "status": "ok",
+          "result_id": "res_b48b6408e87a41109de037edb9c61ec5",
+          "evidence_ids": [
+            "W016"
+          ],
+          "duration_ms": 114,
+          "error_code": null,
+          "model_source_handle": "query_1"
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_0973db37723e40b69145174aa622b790",
+          "data": {
+            "parameters": {
+              "indicator": "weight",
+              "mode": "latest",
+              "start_date": "2026-10-20",
+              "end_date": "2026-10-21",
+              "measurement_context": null,
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": 1,
+            "range": {
+              "start_date": "2026-10-20",
+              "end_date_exclusive": "2026-10-21",
+              "start_utc": "2026-10-20T05:00:00Z",
+              "end_utc_exclusive": "2026-10-21T05:00:00Z"
+            },
+            "records": [
+              {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            ],
+            "count": 1,
+            "unit": "kg"
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "W016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "W016"
+              },
+              "record": {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        },
+        {
+          "status": "ok",
+          "result_id": "res_b48b6408e87a41109de037edb9c61ec5",
+          "data": {
+            "chart": {
+              "chart_id": "chart_f6865cd045f0ab246124",
+              "source_result_id": "res_0973db37723e40b69145174aa622b790",
+              "chart_type": "line",
+              "point_count": 1,
+              "measurement_count": 1,
+              "record_ids": [
+                "W016"
+              ],
+              "date_range": {
+                "first_local_time": "2026-10-20T08:00:00-05:00",
+                "last_local_time": "2026-10-20T08:00:00-05:00"
+              },
+              "query_range": {
+                "start_date": "2026-10-20",
+                "end_date_exclusive": "2026-10-21",
+                "start_utc": "2026-10-20T05:00:00Z",
+                "end_utc_exclusive": "2026-10-21T05:00:00Z"
+              },
+              "panels": [
+                {
+                  "indicator": "weight",
+                  "measurement_context": "unknown",
+                  "unit": "kg",
+                  "line_drawn": false,
+                  "point_count": 1,
+                  "points": [
+                    {
+                      "record_id": "W016",
+                      "measurement_id": null,
+                      "local_time": "2026-10-20T08:00:00-05:00",
+                      "value": 77.5
+                    }
+                  ]
+                }
+              ],
+              "synthetic_only": true,
+              "language": "en",
+              "timezone": "America/Chicago",
+              "image_path": "${PROJECT_ROOT}/artifacts/charts/f6865cd045f0ab246124/chart.png",
+              "svg_path": "${PROJECT_ROOT}/artifacts/charts/f6865cd045f0ab246124/chart.svg",
+              "data_path": "${PROJECT_ROOT}/artifacts/charts/f6865cd045f0ab246124/data.json"
+            }
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "W016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "W016"
+              },
+              "record": {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [
+            {
+              "code": "single_point",
+              "message": "单点仅标记，不形成趋势线，不能据此判断趋势。"
+            }
+          ],
+          "error": null
+        }
+      ],
+      "tool_calls": 2,
+      "model_calls": 3,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 10931,
+        "output_tokens": 249,
+        "backend_requests": 4,
+        "total_tokens": 11180
+      },
+      "duration_ms": 19037,
+      "thread_id": "f4e0b9931383d16a232b4c1a0d34a3a9f2c3c2d95e1fd7e22d9f12fdc5860f78",
+      "pending_task_id": "2b3c65d6ac934eaa8e7aa400f6212520",
+      "pending": null,
+      "session_state": {
+        "indicator": "weight",
+        "mode": "latest",
+        "start_date": "2026-10-20",
+        "end_date": "2026-10-21",
+        "measurement_context": null,
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null,
+        "result_id": "res_0973db37723e40b69145174aa622b790"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T21:43:52.087867+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "chart": true,
+    "real_query_id": true,
+    "expected_records": true,
+    "expected_points": true,
+    "identical_points": true,
+    "query_end": true,
+    "png_and_json": true,
+    "marker_only": true,
+    "no_trend_claim": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "en_T08",
+  "repeat": 1
+}

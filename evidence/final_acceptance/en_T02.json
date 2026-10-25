@@ -1,0 +1,387 @@
+{
+  "id": "T02",
+  "kind": "real_agent",
+  "language": "en",
+  "session_id": "bilingual_906122ea032f405a8167b5674dda50f5",
+  "questions": [
+    "List my fasting blood glucose records from October 1 to October 15, 2026."
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "Retrieved 8 original records. See the complete record table for dates, values, units and measurement conditions. Query range: [2026-10-01, 2026-10-16), end excluded.",
+      "citations": [
+        "G009",
+        "G010",
+        "G011",
+        "G012",
+        "G013",
+        "G014",
+        "G015",
+        "G016"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "record_receipt",
+      "model_answer_accepted": null,
+      "source_result_id": "res_119ab0d452a743ea8760c584ef9ecf49",
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "d825931460d0418fa13c11b852b00fc4",
+          "arguments": {
+            "indicator": "glucose",
+            "mode": "series",
+            "start_date": "2026-10-01",
+            "end_date": "2026-10-16",
+            "measurement_context": "fasting"
+          },
+          "status": "ok",
+          "result_id": "res_119ab0d452a743ea8760c584ef9ecf49",
+          "evidence_ids": [
+            "G009",
+            "G010",
+            "G011",
+            "G012",
+            "G013",
+            "G014",
+            "G015",
+            "G016"
+          ],
+          "duration_ms": 4,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_119ab0d452a743ea8760c584ef9ecf49",
+          "data": {
+            "parameters": {
+              "indicator": "glucose",
+              "mode": "series",
+              "start_date": "2026-10-01",
+              "end_date": "2026-10-16",
+              "measurement_context": "fasting",
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": 15,
+            "range": {
+              "start_date": "2026-10-01",
+              "end_date_exclusive": "2026-10-16",
+              "start_utc": "2026-10-01T05:00:00Z",
+              "end_utc_exclusive": "2026-10-16T05:00:00Z"
+            },
+            "records": [
+              {
+                "record_id": "G009",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.2,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-02T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-02T08:00:00-05:00"
+              },
+              {
+                "record_id": "G010",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.0,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-04T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-04T08:00:00-05:00"
+              },
+              {
+                "record_id": "G011",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.8,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-06T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-06T08:00:00-05:00"
+              },
+              {
+                "record_id": "G012",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.1,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-08T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-08T08:00:00-05:00"
+              },
+              {
+                "record_id": "G013",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.9,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-10T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-10T08:00:00-05:00"
+              },
+              {
+                "record_id": "G014",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.3,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-12T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-12T08:00:00-05:00"
+              },
+              {
+                "record_id": "G015",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.0,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-14T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-14T08:00:00-05:00"
+              },
+              {
+                "record_id": "G016",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.7,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-15T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-15T08:00:00-05:00"
+              }
+            ],
+            "count": 8,
+            "unit": "mmol/L"
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "G009",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G009"
+              },
+              "record": {
+                "record_id": "G009",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.2,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-02T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-02T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G010",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G010"
+              },
+              "record": {
+                "record_id": "G010",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.0,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-04T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-04T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G011",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G011"
+              },
+              "record": {
+                "record_id": "G011",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.8,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-06T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-06T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G012",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G012"
+              },
+              "record": {
+                "record_id": "G012",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.1,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-08T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-08T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G013",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G013"
+              },
+              "record": {
+                "record_id": "G013",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.9,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-10T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-10T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G014",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G014"
+              },
+              "record": {
+                "record_id": "G014",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.3,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-12T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-12T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G015",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G015"
+              },
+              "record": {
+                "record_id": "G015",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 7.0,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-14T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-14T08:00:00-05:00"
+              }
+            },
+            {
+              "source_type": "health_record",
+              "source_id": "G016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G016"
+              },
+              "record": {
+                "record_id": "G016",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.7,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-15T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-15T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 1,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 3033,
+        "output_tokens": 96,
+        "backend_requests": 1,
+        "total_tokens": 3129
+      },
+      "duration_ms": 6984,
+      "thread_id": "e18bc1f2391eaf0ad9ef8582ad56316f9f2ad0e57250312497b260973affb990",
+      "pending_task_id": "0c5efe79e892407e951474ba8801650f",
+      "pending": null,
+      "session_state": {
+        "indicator": "glucose",
+        "mode": "series",
+        "start_date": "2026-10-01",
+        "end_date": "2026-10-16",
+        "measurement_context": "fasting",
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null,
+        "result_id": "res_119ab0d452a743ea8760c584ef9ecf49"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T21:37:38.610453+00:00",
+      "language": "en"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "complete_series_and_bounds": true,
+    "record_table_available": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "en_T02",
+  "repeat": 1
+}

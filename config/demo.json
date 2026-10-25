@@ -1,0 +1,17 @@
+{
+  "patient_id": "P001",
+  "reference_date": "2026-10-23",
+  "timezone": "America/Chicago",
+  "comparison": {"window_days": 14, "min_records_per_window": 3, "max_window_days": 90},
+  "agent": {"max_tool_calls": 8, "request_timeout_seconds": 30, "max_retries": 1},
+  "rag": {"chunk_chars": 600, "overlap_chars": 100, "top_k": 4, "max_top_k": 5, "max_files": 5, "max_file_bytes": 1048576},
+  "indicators": {
+    "glucose": {"unit": "mmol/L", "display_decimals": 1, "aliases": ["血糖", "glucose", "blood glucose"], "contexts": ["fasting", "postprandial", "random", "unknown"]},
+    "weight": {"unit": "kg", "display_decimals": 1, "aliases": ["体重", "weight"], "contexts": ["unknown"]},
+    "systolic_blood_pressure": {"unit": "mmHg", "display_decimals": 0, "aliases": ["收缩压", "高压", "systolic BP"], "contexts": ["unknown"]},
+    "diastolic_blood_pressure": {"unit": "mmHg", "display_decimals": 0, "aliases": ["舒张压", "低压", "diastolic BP"], "contexts": ["unknown"]}
+  },
+  "indicator_groups": {"血压": ["systolic_blood_pressure", "diastolic_blood_pressure"]},
+  "mention_aliases": {"ldl": ["LDL", "LDL-C", "低密度脂蛋白", "低密度脂蛋白胆固醇", "low-density lipoprotein"]},
+  "display": {"percentage_decimals": 2, "rounding": "ROUND_HALF_UP"}
+}

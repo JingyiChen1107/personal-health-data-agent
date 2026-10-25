@@ -1,0 +1,123 @@
+{
+  "id": "T17",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_e7bf24bf3d2743dd8ad0eb743a7a39c9",
+  "questions": [
+    "完整检查R002，是否提到了LDL及其别名？"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "经对报告 R002 全文检索（使用别名 LDL、LDL-C、低密度脂蛋白等），未找到任何提及。",
+      "citations": [
+        "R002:SCAN"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "c737bdd9265e4350991e51872d0ad940",
+          "arguments": {
+            "query": "LDL",
+            "mode": "mention_check",
+            "report_id": "R002",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_cb7cf409a7bd4b04944d5bdcc851d697",
+          "evidence_ids": [
+            "R002:SCAN"
+          ],
+          "duration_ms": 5,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_cb7cf409a7bd4b04944d5bdcc851d697",
+          "data": {
+            "mode": "mention_check",
+            "scope_report_ids": [
+              "R002"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [],
+            "checked_aliases": [
+              "LDL",
+              "LDL-C",
+              "低密度脂蛋白",
+              "低密度脂蛋白胆固醇",
+              "low-density lipoprotein"
+            ],
+            "coverage": "full_text",
+            "absence_scope": "仅限上述报告全文和列出的别名"
+          },
+          "evidence": [
+            {
+              "source_type": "report_scan",
+              "source_id": "R002:SCAN",
+              "locator": {
+                "report_id": "R002",
+                "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+                "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+                "start_line": 1,
+                "end_line": 9
+              },
+              "record": {
+                "report_date": "2025-12-05",
+                "checked_aliases": [
+                  "LDL",
+                  "LDL-C",
+                  "低密度脂蛋白",
+                  "低密度脂蛋白胆固醇",
+                  "low-density lipoprotein"
+                ],
+                "coverage": "full_text",
+                "match_count": 0
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 2,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 9356,
+        "output_tokens": 191,
+        "backend_requests": 3,
+        "total_tokens": 9547
+      },
+      "duration_ms": 21583,
+      "thread_id": "b596e647708e433e10b7ab0869d1e9d2c1d07c39ea77138f37e2d94296e1536b",
+      "pending_task_id": "d461335e2af245f2b35e37cebe69e87c",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:09:45.466131+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "full_negative": true,
+    "limited_scope": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T17",
+  "repeat": 1
+}

@@ -1,0 +1,111 @@
+{
+  "id": "T05",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_0f859cf0bce44ac191ba7dcd9bd62684",
+  "questions": [
+    "2024年我有哪些血糖记录？"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "当前用户在指定范围没有符合条件的记录。查询区间：[2024-01-01, 2025-01-01)，终日不含。",
+      "citations": [],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "business_receipt",
+      "business_status": "no_data",
+      "model_answer_accepted": null,
+      "source_result_id": "res_03e5c9a799a746b1b50dbfef1909e5d5",
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "539c710a8460452ba33be0a86c26ae95",
+          "arguments": {
+            "indicator": "glucose",
+            "mode": "series",
+            "start_date": "2024-01-01",
+            "end_date": "2025-01-01"
+          },
+          "status": "no_data",
+          "result_id": "res_03e5c9a799a746b1b50dbfef1909e5d5",
+          "evidence_ids": [],
+          "duration_ms": 4,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "no_data",
+          "result_id": "res_03e5c9a799a746b1b50dbfef1909e5d5",
+          "data": {
+            "parameters": {
+              "indicator": "glucose",
+              "mode": "series",
+              "start_date": "2024-01-01",
+              "end_date": "2025-01-01",
+              "measurement_context": null,
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": 366,
+            "range": {
+              "start_date": "2024-01-01",
+              "end_date_exclusive": "2025-01-01",
+              "start_utc": "2024-01-01T06:00:00Z",
+              "end_utc_exclusive": "2025-01-01T06:00:00Z"
+            },
+            "records": [],
+            "count": 0,
+            "unit": "mmol/L"
+          },
+          "evidence": [],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 1,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 2880,
+        "output_tokens": 82,
+        "backend_requests": 1,
+        "total_tokens": 2962
+      },
+      "duration_ms": 7176,
+      "thread_id": "70640cf5d09ab5a47e7ded23d319e14cbd299a32162f3a73c45ae63f5b995561",
+      "pending_task_id": "83c8a069db994b159e70f18ec527a774",
+      "pending": null,
+      "session_state": {
+        "indicator": "glucose",
+        "mode": "series",
+        "start_date": "2024-01-01",
+        "end_date": "2025-01-01",
+        "measurement_context": null,
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:04:35.121186+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "empty_year": true,
+    "explained": true,
+    "no_invented_value": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T05",
+  "repeat": 1
+}

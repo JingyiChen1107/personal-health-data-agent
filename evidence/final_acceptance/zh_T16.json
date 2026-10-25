@@ -1,0 +1,243 @@
+{
+  "id": "T16",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_a81231c13da9481e9fc3f477a2c0d382",
+  "questions": [
+    "从R002中找出甲状腺复查安排。"
+  ],
+  "turns": [
+    {
+      "status": "error",
+      "answer": "回答未通过格式或来源校验，已保留工具结果供查看。",
+      "citations": [],
+      "needs_clarification": false,
+      "error": {
+        "code": "invalid_final_response",
+        "message": "回答未通过格式或来源校验，已保留工具结果供查看。"
+      },
+      "trace": [
+        {
+          "tool": "search_health_documents",
+          "call_id": "948bd269134a4d6eb0e4f7dc52101e73",
+          "arguments": {
+            "query": "甲状腺复查安排",
+            "mode": "mention_check",
+            "report_id": "R002",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "error",
+          "result_id": "res_5974b43ebddf4548ade4bded3885b603",
+          "evidence_ids": [],
+          "duration_ms": 0,
+          "error_code": "report_date_mismatch",
+          "origin": "policy_guard"
+        },
+        {
+          "tool": "search_health_documents",
+          "call_id": "29f25e4c048c4d9a9e53b1a9bc8ac582",
+          "arguments": {
+            "query": "甲状腺复查安排",
+            "mode": "semantic",
+            "report_id": "R002",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_fa883ed747fc4997826488212e7a4656",
+          "evidence_ids": [
+            "R002:C001"
+          ],
+          "duration_ms": 68,
+          "error_code": null
+        },
+        {
+          "tool": "search_health_documents",
+          "call_id": "fe6eb52f7d614c7ba25053b97f52c3d0",
+          "arguments": {
+            "query": "甲状腺复查安排",
+            "mode": "semantic",
+            "report_id": "R002",
+            "start_date": null,
+            "end_date": null,
+            "top_k": 4
+          },
+          "status": "ok",
+          "result_id": "res_75c5b8486b654fc6a31d366a65af2cfd",
+          "evidence_ids": [
+            "R002:C001"
+          ],
+          "duration_ms": 53,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "error",
+          "result_id": "res_5974b43ebddf4548ade4bded3885b603",
+          "data": {
+            "required_parameters": {
+              "start_date": null,
+              "end_date": null,
+              "mode": "semantic"
+            }
+          },
+          "evidence": [],
+          "warnings": [],
+          "error": {
+            "code": "report_date_mismatch",
+            "message": "检索条件与用户范围不一致。去年是上一自然年；仅指定报告编号不能增加日期过滤；报告内容问答用semantic，全文是否提及才用mention_check。请按required_parameters纠正。"
+          }
+        },
+        {
+          "status": "ok",
+          "result_id": "res_fa883ed747fc4997826488212e7a4656",
+          "data": {
+            "mode": "semantic",
+            "scope_report_ids": [
+              "R002"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.288724
+              }
+            ],
+            "coverage": "top_k_only",
+            "absence_scope": "检索片段不能证明整份报告未提及",
+            "embedding_model": "embeddinggemma:300m"
+          },
+          "evidence": [
+            {
+              "source_type": "report_text",
+              "source_id": "R002:C001",
+              "locator": {
+                "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+                "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+                "start_line": 1,
+                "end_line": 9
+              },
+              "record": {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.288724
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        },
+        {
+          "status": "ok",
+          "result_id": "res_75c5b8486b654fc6a31d366a65af2cfd",
+          "data": {
+            "mode": "semantic",
+            "scope_report_ids": [
+              "R002"
+            ],
+            "scope_report_count": 1,
+            "date_field": "report_date",
+            "start_date": null,
+            "end_date_exclusive": "2026-10-24",
+            "untrusted_document_content": true,
+            "matches": [
+              {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.288724
+              }
+            ],
+            "coverage": "top_k_only",
+            "absence_scope": "检索片段不能证明整份报告未提及",
+            "embedding_model": "embeddinggemma:300m"
+          },
+          "evidence": [
+            {
+              "source_type": "report_text",
+              "source_id": "R002:C001",
+              "locator": {
+                "file_path": "sample_data/reports/2025-12-05_bp_summary.txt",
+                "content_hash": "23f3a4172b6ecd254eb3fde89140df44800c6bdcedfc8cbe97671c92260d1704",
+                "start_line": 1,
+                "end_line": 9
+              },
+              "record": {
+                "chunk": 1,
+                "start_char": 0,
+                "end_char": 164,
+                "start_line": 1,
+                "end_line": 9,
+                "text": "【完全虚构的课程演示报告，不属于真实患者】\n报告编号：R002\n报告日期：2025-12-05\n模拟用户：P001\n标题：血压记录归档说明\n\n本文件说明血压记录的整理方式：每次测量需保存日期、时间、收缩压和舒张压。\n记录整理意见：保留原始测量条件，复核缺失时间的条目，避免将不同次测量拼为同一对。\n此文件不包含具体的测量数值。\n",
+                "report_id": "R002",
+                "report_date": "2025-12-05",
+                "source_id": "R002:C001",
+                "score": 0.288724
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 3,
+      "model_calls": 5,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 21331,
+        "output_tokens": 453,
+        "backend_requests": 6,
+        "total_tokens": 21784
+      },
+      "duration_ms": 46658,
+      "thread_id": "f2087567fc44d4c044e2f590ec52e6fec3eebe3e9b67756485964731167900e5",
+      "pending_task_id": "19cfb5a4661a41bd9f5d8a9583bfe6fd",
+      "pending": null,
+      "session_state": {},
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:09:23.826555+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": false,
+  "checks": {
+    "completed": false,
+    "citations_grounded": true,
+    "semantic": true,
+    "limited_absence": false,
+    "no_invented_plan": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T16",
+  "repeat": 1
+}

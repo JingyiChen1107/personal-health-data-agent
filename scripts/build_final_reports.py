@@ -1,0 +1,103 @@
+"""Generate the current M4 milestone only from accepted bilingual evidence."""
+from pathlib import Path
+import argparse,json,re,sys,statistics,hashlib
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from health_agent.config import PROJECT_ROOT
+from scripts.final_acceptance import profile,CORE
+
+def build(folder):
+    folder=Path(folder).resolve();r=json.loads((folder/'results.json').read_text());review=json.loads((folder/'independent_review.json').read_text())
+    assert r['machine_gate_passed'] and review['accepted'],'Do not claim completion before bilingual acceptance and review'
+    assert profile()==r['source_sha256'],'The running source changed after acceptance'
+    log=(PROJECT_ROOT/'artifacts/M4_validation/automated_tests.log').read_text();m=re.search(r'Ran (\d+) tests',log);assert m and log.rstrip().endswith('OK');count=int(m.group(1))
+    assert set(r['languages'])=={'zh','en'}
+    executions=r['main_cases']+r['repetitions']+r['additional_cases'];turns=[t for c in executions for t in c['turns']]
+    rows=[]
+    for c in r['main_cases']:
+        mode='直接工具边界' if c['kind']=='direct_tool' else '模型选工具＋程序回执' if any(t.get('answer_origin') in ('tool_receipt','business_receipt','record_receipt') for t in c['turns']) else '模型回答/追问'
+        rows.append('| '+c['language']+' | '+c['id']+' | '+('通过' if c['passed'] else '未完成')+' | '+mode+' | '+f"{sum(t.get('duration_ms',0) for t in c['turns'])/1000:.2f}秒 |")
+    keyrows=[]
+    for lang in ('zh','en'):
+        for cid in CORE:
+            cases=[c for c in r['main_cases']+r['repetitions'] if c['language']==lang and c['id']==cid]
+            keyrows.append('| '+lang+' | '+cid+' | '+' | '.join('通过' if c['passed'] else '未通过' for c in cases)+' |')
+    failed=[c for c in r['main_cases'] if not c['passed']]
+    failure_text='\n'.join('- '+c['execution_id']+'：'+c['questions'][-1]+' 结果：'+c['turns'][-1]['answer'] for c in failed) or '无未完成主场景。'
+    zh=r['summary']['zh'];en=r['summary']['en'];summary=f"中文{zh['main_passed']}/20、关键{zh['critical_passed']}/15；英文{en['main_passed']}/20、关键{en['critical_passed']}/15；英文报告双语检索{sum(c['passed'] for c in r['additional_cases'])}/2；{count}项自动化测试通过。"
+    english=f"Version 0.9.0 supports Chinese and English UI, questions, replies, clarifications, business receipts and chart labels. Chinese: {zh['main_passed']}/20, core {zh['critical_passed']}/15. English: {en['main_passed']}/20, core {en['critical_passed']}/15. The two queries against an uploaded English report passed in both languages. This is system-level task completion on synthetic fixtures, not bare-model accuracy or clinical validation."
+    text=f'''# M4｜双语质量验证、验收与项目交付
+
+## 一、最终结论
+
+v0.9.0双语版本：**{summary}** 独立结果复核阻断项{len(review['blockers'])}。每种语言分别达到课程原型门槛；未完成项目如实保留，不把校验拒绝计为完成。
+
+English acceptance summary: {english}
+
+正式证据目录：`{folder.relative_to(PROJECT_ROOT)}`。原始问题、回答、工具、来源、参数、耗时、校验与源码哈希完整保留。结果由Codex逐条阅读复核，不代表外部人员或临床审核。v0.8.0中文18/20、关键15/15仅是历史版本，保存在day内，不与本轮拼接。
+
+## 二、双语范围
+
+- 侧栏“语言 / Language”切换中文或英文界面，按钮、状态、示例、下载与比较窗口标签相应变化。
+- 回复自动跟随问题语言；短事件ID、条件选项沿用当前任务语言。API也可显式传language。原文引用、来源ID与技术枚举保留原样，不伪造翻译后的证据。
+- 支持ISO及已测试的英文月份日期、包含式终日、上一自然年和30日范围；metformin、amlodipine、atorvastatin映射到库中真实药名标签。
+- 英文画图意图、暂停恢复、缺条件处理、取消与语言切换已验证。追问不承载未经校验的个人事实：问题和选项使用中英文类型模板，事件标签取自真实读取结果。图表标题、时间轴、单点提示使用创建时的语言。
+- 事实校验共同约束数值、单位、日期、最新记录、前后均值、变化方向、未知条件、缺证据与来源；英文单位全称只做拼写等价，不换算数值。错误pounds/kg与micrograms/milligrams不得混用。
+- 仅测试一个虚构患者、三类指标、冻结四报告，以及隔离上传的一个英文报告；不宣称覆盖所有语言表达、医学同义词或格式。
+
+## 三、统一验收方法
+
+两种语言各20个主场景；T01/T06/T10/T15/T18各三次，关键共30次（首次已含在主轮），再加英文报告2次，共{len(executions)}个执行。两个T09是直接工具边界，其余{sum(c['kind']=='real_agent' for c in executions)}个为真实本机Agent任务，共{len(turns)}个真实交互轮次。测试替身只用于离线检查。
+
+P001、2026-10-23、America/Chicago、同一模型及工具；任务独立会话，多轮内部继承身份。每轮源码、配置、数据、评分脚本冻结，运行前后哈希一致。单轮240秒、多轮合计360秒；超时或未执行不计通过。原始问题自动识别语言，而非强制将中文问题翻成英文后复用旧答案。
+
+每种语言主轮至少18/20、关键15/15、无已显示事实阻断项、并逐条结果复核；英文报告两次检索都须通过。完整规则见[双语验收协议](双语验收协议.md)。
+
+模型选择任务、工具和依赖；SQL、日期规范化、用户显式单一单位约束、统计及图表由程序完成。简单latest/series记录、图表和确定业务状态使用明确标注的回执，不算模型撰写的分析。绘图可选query_1等任务句柄，应用绑定本会话真实result_id并在trace保留model_source_handle，不模糊纠错、猜ID或跨会话取数。
+
+## 四、主轮结果
+
+| 语言 | 场景 | 结果 | 输出方式 | 总耗时 |
+|---|---|---|---|---|
+'''+ '\n'.join(rows)+'''
+
+## 五、关键三轮
+
+| 语言 | 场景 | 第一次 | 第二次 | 第三次 |
+|---|---|---|---|---|
+'''+ '\n'.join(keyrows)+f'''
+
+## 六、英文报告与界面
+
+隔离数据库使用真实upload_report登记固定UTF-8英文TXT，再通过本机EmbeddingGemma及Chroma建立索引；主库仍保留原四份报告。分别用英文和中文询问缺测日期整理要求，回答必须有真实片段定位并说明留空、不补值。源文件为`tests/fixtures/english_report.txt`，报告哈希受冻结与复核约束。
+
+实际浏览器已验证中文界面切换为英文、英文问题得到英文6.9 mmol/L及unknown说明、英文七点体重图和下载入口。原始记录与来源不因语言切换改写，已经生成的历史消息和图表保留原创建语言。
+
+## 七、失败历史与剩余限制
+
+{failure_text}
+
+首轮评分把正确的英文月份日期及单点否定语序误拒；保留原成绩后修正评分并新建运行。随后隔离测试发现空结果日期范围未被英文校验采纳，以及拼写为pounds的错误单位漏检；停止并保存原轮，修复校验、补充正反测试后再完整执行。独立复核还发现最新查询返回一条被扩大成系统全部历史只有一条的已显示错误；该候选轮未获接受，补充范围校验后重新执行。最新查询还暴露了成功后多余追问，以及用户明确单位被模型遗漏的问题；分别以事实回执和显式单位参数约束修复，所有中止轮与冒烟单独保留。独立复核还发现英文追问在未执行查询时声称无结果，候选轮因此停止；现版所有追问与选项由字段类型模板和真实事件产生，模型原始措辞只保留在技术trace。英文源文专项另发现“No real patient data”的中文译文及真实行号被误拒；补充受控语义匹配和精确来源行号验证，同时保留对原文无依据全文缺失断言的拒绝，并在专项通过后重新整轮执行。没有把旧轮通过项拼接为正式成绩。
+
+未通过校验的文字不会作为用户结论；保护性失败仍是任务未完成。报告语义片段不能推出全文或整个病史不存在；全文术语扫描只覆盖工具列出的报告与受控别名。药名翻译只是标签等价，不构成用药建议。比较正文的“至/from/to”可能复述窗口边界，需以工具卡片明确的“开始含、结束不含”为准，不能把右端点当作最后测量日。全文术语检索的“未找到任何提及”仅限所列报告与受控别名，不宣称覆盖全部医学同义词。
+
+## 八、时延与成本
+
+'''
+    for lang in ('zh','en'):
+        values=[t.get('duration_ms',0)/1000 for c in executions if c['language']==lang for t in c['turns']]
+        text+=f"{lang}真实交互耗时中位{statistics.median(values):.2f}秒、最长{max(values):.2f}秒。\n\n"
+    text+='''只代表本机负载、缓存与固定任务，不作为跨模型速度基准。推理和embedding走本机，云端API计费0；硬件及电力未估算。
+
+## 九、交付与维护
+
+[M1](M1_数据与工具底座.md)、[M2](M2_Agent与模型集成.md)、[M3](M3_RAG与可视化.md)和本M4保持四阶段结构；安装、语言使用、演示、已知问题与维护统一见[使用与交接](../deliverables/使用与交接.md)。原始SOW保留，用户新增双语要求以本里程碑及双语协议扩展验收。
+
+旧逐日文档和逐日验证记录在day目录；当前结果在artifacts/M4_validation，图表在artifacts/charts。原始历史证据中的旧目录字符串保留为审计信息。分发包包含源码、锁定依赖、冻结样例、英文报告测试源、当前文档和本轮验收证据，不包含.env、模型权重、虚拟环境、聊天数据库或非验收上传。
+
+包内MANIFEST.json逐文件校验，ZIP外同名.sha256校验整包。更换模型、修改运行或评分脚本后必须新建完整双语验收、关键三轮及结果复核，不能只重跑失败项后宣称全通过。课程结果不代表真实患者、诊疗或生产环境验证。
+'''
+    target=PROJECT_ROOT/'docs/M4_质量验证与交付.md';target.write_text(text)
+    out=PROJECT_ROOT/'artifacts/M4_validation';(out/'completion.json').write_text(json.dumps({'version':'0.9.0','accepted_run':str(folder.relative_to(PROJECT_ROOT)),'summary':r['summary'],'english_report_passed':sum(c['passed'] for c in r['additional_cases']),'offline_tests':count,'blockers':review['blockers'],'runtime_source_unchanged':True,'scope':'synthetic_bilingual_course_prototype'},ensure_ascii=False,indent=2))
+    print(summary)
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('folder',type=Path);a=p.parse_args();build(a.folder)

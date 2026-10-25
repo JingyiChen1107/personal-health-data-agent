@@ -1,0 +1,277 @@
+{
+  "id": "T19",
+  "kind": "real_agent",
+  "language": "zh",
+  "session_id": "bilingual_8e729f7079f14f2382ae0687cdae071e",
+  "questions": [
+    "最近一次空腹血糖是多少？",
+    "那最近一次体重呢？"
+  ],
+  "turns": [
+    {
+      "status": "ok",
+      "answer": "最近一次血糖：6.7 mmol/L。测量时间：2026-10-15T08:00:00-05:00（本地时间）。测量条件：空腹。[G016] 本次查询只返回最近测量，不代表完整历史。",
+      "citations": [
+        "G016"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "record_receipt",
+      "record_query_mode": "latest",
+      "model_answer_accepted": null,
+      "source_result_id": "res_838e7ede7ee04612a4b63bd18cea4c31",
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "02134871e9e84cb3b891ca21484554c7",
+          "arguments": {
+            "indicator": "glucose",
+            "mode": "latest",
+            "measurement_context": "fasting"
+          },
+          "status": "ok",
+          "result_id": "res_838e7ede7ee04612a4b63bd18cea4c31",
+          "evidence_ids": [
+            "G016"
+          ],
+          "duration_ms": 4,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_838e7ede7ee04612a4b63bd18cea4c31",
+          "data": {
+            "parameters": {
+              "indicator": "glucose",
+              "mode": "latest",
+              "start_date": null,
+              "end_date": null,
+              "measurement_context": "fasting",
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": null,
+            "range": {
+              "start_date": null,
+              "end_date_exclusive": "2026-10-24",
+              "start_utc": null,
+              "end_utc_exclusive": "2026-10-24T05:00:00Z"
+            },
+            "records": [
+              {
+                "record_id": "G016",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.7,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-15T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-15T08:00:00-05:00"
+              }
+            ],
+            "count": 1,
+            "unit": "mmol/L"
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "G016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "G016"
+              },
+              "record": {
+                "record_id": "G016",
+                "patient_id": "P001",
+                "indicator": "glucose",
+                "value": 6.7,
+                "unit": "mmol/L",
+                "measured_at": "2026-10-15T13:00:00Z",
+                "measurement_context": "fasting",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-15T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 1,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 2876,
+        "output_tokens": 54,
+        "backend_requests": 1,
+        "total_tokens": 2930
+      },
+      "duration_ms": 8659,
+      "thread_id": "0914a628f785ee9b0710d61220ab0d254ae2b78a6333afe19f46a45268d3bb87",
+      "pending_task_id": "e0b6eaeacbf34d71b5a1e0c61d408035",
+      "pending": null,
+      "session_state": {
+        "indicator": "glucose",
+        "mode": "latest",
+        "start_date": null,
+        "end_date": null,
+        "measurement_context": "fasting",
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null,
+        "result_id": "res_838e7ede7ee04612a4b63bd18cea4c31"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:10:23.819998+00:00",
+      "language": "zh"
+    },
+    {
+      "status": "ok",
+      "answer": "最近一次体重：77.5 kg。测量时间：2026-10-20T08:00:00-05:00（本地时间）。测量条件：条件未知。[W016] 本次查询只返回最近测量，不代表完整历史。",
+      "citations": [
+        "W016"
+      ],
+      "needs_clarification": false,
+      "error": null,
+      "answer_origin": "record_receipt",
+      "record_query_mode": "latest",
+      "model_answer_accepted": null,
+      "source_result_id": "res_77faa278fc764722ba25152d18b7c8c6",
+      "trace": [
+        {
+          "tool": "query_health_data",
+          "call_id": "073d22f01f89484091b1857b978de1e8",
+          "arguments": {
+            "indicator": "weight",
+            "mode": "latest",
+            "measurement_context": null
+          },
+          "status": "ok",
+          "result_id": "res_77faa278fc764722ba25152d18b7c8c6",
+          "evidence_ids": [
+            "W016"
+          ],
+          "duration_ms": 11,
+          "error_code": null
+        }
+      ],
+      "tool_results": [
+        {
+          "status": "ok",
+          "result_id": "res_77faa278fc764722ba25152d18b7c8c6",
+          "data": {
+            "parameters": {
+              "indicator": "weight",
+              "mode": "latest",
+              "start_date": null,
+              "end_date": null,
+              "measurement_context": null,
+              "event_id": null,
+              "window_days": null,
+              "requested_unit": null
+            },
+            "patient_id": "P001",
+            "reference_date": "2026-10-23",
+            "timezone": "America/Chicago",
+            "calendar_day_count": null,
+            "range": {
+              "start_date": null,
+              "end_date_exclusive": "2026-10-24",
+              "start_utc": null,
+              "end_utc_exclusive": "2026-10-24T05:00:00Z"
+            },
+            "records": [
+              {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            ],
+            "count": 1,
+            "unit": "kg"
+          },
+          "evidence": [
+            {
+              "source_type": "health_record",
+              "source_id": "W016",
+              "locator": {
+                "table": "health_records",
+                "record_id": "W016"
+              },
+              "record": {
+                "record_id": "W016",
+                "patient_id": "P001",
+                "indicator": "weight",
+                "value": 77.5,
+                "unit": "kg",
+                "measured_at": "2026-10-20T13:00:00Z",
+                "measurement_context": "unknown",
+                "source": "synthetic_fixture_v1",
+                "measurement_id": null,
+                "local_time": "2026-10-20T08:00:00-05:00"
+              }
+            }
+          ],
+          "warnings": [],
+          "error": null
+        }
+      ],
+      "tool_calls": 1,
+      "model_calls": 1,
+      "retries": 0,
+      "usage": {
+        "input_tokens": 2994,
+        "output_tokens": 52,
+        "backend_requests": 1,
+        "total_tokens": 3046
+      },
+      "duration_ms": 10035,
+      "thread_id": "0914a628f785ee9b0710d61220ab0d254ae2b78a6333afe19f46a45268d3bb87",
+      "pending_task_id": "5cdf7377045b4cf6a8dddbfe988d2ea9",
+      "pending": null,
+      "session_state": {
+        "indicator": "weight",
+        "mode": "latest",
+        "start_date": null,
+        "end_date": null,
+        "measurement_context": null,
+        "event_id": null,
+        "window_days": null,
+        "requested_unit": null,
+        "result_id": "res_77faa278fc764722ba25152d18b7c8c6"
+      },
+      "reference_date": "2026-10-23",
+      "created_at": "2026-10-25T22:10:33.892506+00:00",
+      "language": "zh"
+    }
+  ],
+  "passed": true,
+  "checks": {
+    "completed": true,
+    "citations_grounded": true,
+    "fasting": true,
+    "weight": true,
+    "cleared_context": true,
+    "weight_value": true,
+    "reply_language": true,
+    "runtime_fact_checks": true
+  },
+  "execution_id": "zh_T19",
+  "repeat": 1
+}
