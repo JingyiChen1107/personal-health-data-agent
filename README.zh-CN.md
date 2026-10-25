@@ -44,7 +44,7 @@ OLLAMA_HOST=127.0.0.1:11435 ollama pull embeddinggemma:300m
 .venv/bin/python scripts/prepare_demo.py --initialize --reindex
 ```
 
-打开 **http://127.0.0.1:8501/**，侧栏“语言 / Language”可切换中文和 English。已有安装请保留原 `.env` 与数据库。
+打开 [http://127.0.0.1:8501/](http://127.0.0.1:8501/)，侧栏“语言 / Language”可切换中文和 English。已有安装请保留原 `.env` 与数据库。
 
 默认模型为 `qwen3.5:4b-q4_K_M`，embedding 为 `embeddinggemma:300m`，均通过本机 **11435** 端口的 Ollama 运行，无需 API 密钥。安装和下载需要联网；其他平台尚未完成整套验收。
 

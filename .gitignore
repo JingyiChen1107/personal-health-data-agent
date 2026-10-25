@@ -13,10 +13,7 @@ build/
 dist/
 .DS_Store
 # Generated evaluations stay local; accepted synthetic evidence is under evidence/.
-artifacts/*
-!artifacts/charts/
-artifacts/charts/*
-!artifacts/charts/*/
+artifacts/
 # Local historical archives and incidental uploads
 day/
 *.zip
